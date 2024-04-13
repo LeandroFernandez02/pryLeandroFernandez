@@ -1,0 +1,93 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Timer = System.Windows.Forms.Timer;
+
+
+
+namespace pryLeandroFernandez2
+{
+    public class clsEnemigo
+    {
+        public Timer timerMover;
+        private List<PictureBox> listaEnemigos;
+        public PictureBox pctEnemigo;
+
+        // Constructor
+        public clsEnemigo()
+        {
+            timerMover = new Timer();
+            timerMover.Interval = 1;
+            timerMover.Tick += timerMover_Tick;
+
+            listaEnemigos = new List<PictureBox>(); 
+        }
+
+        // Metodo mover
+        public void mover(frmJuego FrmJuego)
+        {
+            Timer timerGeneradorEnemigos = new Timer();
+            timerGeneradorEnemigos.Interval = 3000; // tres segundos
+            timerGeneradorEnemigos.Tick += (sender, arges) =>
+            {
+                crearEnemigo(FrmJuego);
+            };
+            timerGeneradorEnemigos.Start();
+            
+        }
+
+        // Funion crearEnemigo
+        void crearEnemigo(frmJuego FrmJuego)
+        {
+            pctEnemigo = new PictureBox();
+
+            Random rnd = new Random();
+            rnd.Next(1,3);
+            int randomX = rnd.Next(0, FrmJuego.ClientSize.Width - pctEnemigo.Width);            
+
+            switch (rnd.Next(1,3))
+            {
+                case 1:
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo_removebg_preview;
+                    break;
+                case 2:
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo2_removebg_preview;
+                    break;
+            }
+            pctEnemigo.Size = new Size(50, 50);
+            pctEnemigo.BackColor = Color.Black;
+            pctEnemigo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctEnemigo.Location = new Point(randomX, -50);
+            FrmJuego.Controls.Add(pctEnemigo);
+            pctEnemigo.BringToFront();
+
+            listaEnemigos.Add(pctEnemigo);
+            if (!timerMover.Enabled == true)
+            {
+                timerMover.Start();
+            }
+        }
+
+        // Procedimiento timerMover
+        private void timerMover_Tick(object sender, EventArgs e)
+        {
+            foreach (var enemigo in listaEnemigos.ToList())
+            {
+                enemigo.Top += 2; // Velocidad
+
+                if (enemigo.Top >= 500)
+                {
+                    // Remover el PictureBox del disparo del formulario y de la lista
+                    listaEnemigos.Remove(enemigo);
+                    if(enemigo.Parent != null)
+                    {
+                        enemigo.Parent.Controls.Remove(enemigo);
+                    }                   
+                    enemigo.Dispose();
+                }
+            }
+        }
+    }
+}
