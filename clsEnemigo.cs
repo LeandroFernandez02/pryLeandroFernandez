@@ -29,7 +29,7 @@ namespace pryLeandroFernandez2
         public void mover(frmJuego FrmJuego)
         {
             Timer timerGeneradorEnemigos = new Timer();
-            timerGeneradorEnemigos.Interval = 3000; // tres segundos
+            timerGeneradorEnemigos.Interval = 2000; // dos segundos
             timerGeneradorEnemigos.Tick += (sender, arges) =>
             {
                 crearEnemigo(FrmJuego);
@@ -44,19 +44,41 @@ namespace pryLeandroFernandez2
             pctEnemigo = new PictureBox();
 
             Random rnd = new Random();
-            rnd.Next(1,3);
+            rnd.Next(1,8);
             int randomX = rnd.Next(0, FrmJuego.ClientSize.Width - pctEnemigo.Width);            
 
-            switch (rnd.Next(1,3))
+            switch (rnd.Next(1,8))
             {
                 case 1:
                     pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo_removebg_preview;
+                    pctEnemigo.Size = new Size(50, 50);
                     break;
                 case 2:
                     pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo2_removebg_preview;
+                    pctEnemigo.Size = new Size(60, 60);
                     break;
+                case 3:
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.enemigo3;
+                    pctEnemigo.Size = new Size(50, 50);
+                    break;
+                case 4:
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.enemigo4;
+                    pctEnemigo.Size = new Size(50, 50);
+                    break;
+                case 5:
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.enemigo5;
+                    pctEnemigo.Size = new Size(40, 40);
+                    break;
+                case 6:
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.enemigo6;
+                    pctEnemigo.Size = new Size(50, 50);
+                    break;
+                case 7:
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.enemigo7;
+                    pctEnemigo.Size = new Size(50, 50);
+                    break;               
             }
-            pctEnemigo.Size = new Size(50, 50);
+            //pctEnemigo.Size = new Size(50, 50);
             pctEnemigo.BackColor = Color.Black;
             pctEnemigo.SizeMode = PictureBoxSizeMode.StretchImage;
             pctEnemigo.Location = new Point(randomX, -50);
