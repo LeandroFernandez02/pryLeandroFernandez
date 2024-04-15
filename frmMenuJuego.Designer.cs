@@ -31,9 +31,13 @@
             pctFondo = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
+            pnlJugador = new Panel();
+            txtJugador = new TextBox();
+            lblJugador = new Label();
             ((System.ComponentModel.ISupportInitialize)pctFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            pnlJugador.SuspendLayout();
             SuspendLayout();
             // 
             // pctFondo
@@ -67,19 +71,53 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
+            // pnlJugador
+            // 
+            pnlJugador.BackColor = Color.Black;
+            pnlJugador.Controls.Add(txtJugador);
+            pnlJugador.Controls.Add(lblJugador);
+            pnlJugador.Location = new Point(289, 263);
+            pnlJugador.Name = "pnlJugador";
+            pnlJugador.Size = new Size(223, 49);
+            pnlJugador.TabIndex = 3;
+            // 
+            // txtJugador
+            // 
+            txtJugador.BackColor = Color.Black;
+            txtJugador.BorderStyle = BorderStyle.None;
+            txtJugador.Cursor = Cursors.IBeam;
+            txtJugador.ForeColor = Color.White;
+            txtJugador.Location = new Point(72, 15);
+            txtJugador.Name = "txtJugador";
+            txtJugador.Size = new Size(100, 16);
+            txtJugador.TabIndex = 1;
+            // 
+            // lblJugador
+            // 
+            lblJugador.AutoSize = true;
+            lblJugador.ForeColor = Color.White;
+            lblJugador.Location = new Point(24, 15);
+            lblJugador.Name = "lblJugador";
+            lblJugador.Size = new Size(42, 15);
+            lblJugador.TabIndex = 0;
+            lblJugador.Text = "Player:";
+            // 
             // frmMenuJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox3);
+            Controls.Add(pnlJugador);
             Controls.Add(pictureBox2);
+            Controls.Add(pictureBox3);
             Controls.Add(pctFondo);
             Name = "frmMenuJuego";
             Text = "Menu Galaga";
             ((System.ComponentModel.ISupportInitialize)pctFondo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            pnlJugador.ResumeLayout(false);
+            pnlJugador.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -88,5 +126,8 @@
         private PictureBox pctFondo;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private Panel pnlJugador;
+        private TextBox txtJugador;
+        private Label lblJugador;
     }
 }
