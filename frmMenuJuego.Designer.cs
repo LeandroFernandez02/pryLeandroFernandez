@@ -76,7 +76,7 @@
             pnlJugador.BackColor = Color.Black;
             pnlJugador.Controls.Add(txtJugador);
             pnlJugador.Controls.Add(lblJugador);
-            pnlJugador.Location = new Point(289, 263);
+            pnlJugador.Location = new Point(289, 221);
             pnlJugador.Name = "pnlJugador";
             pnlJugador.Size = new Size(223, 49);
             pnlJugador.TabIndex = 3;
@@ -91,6 +91,7 @@
             txtJugador.Name = "txtJugador";
             txtJugador.Size = new Size(100, 16);
             txtJugador.TabIndex = 1;
+            txtJugador.KeyPress += txtJugador_KeyPress;
             // 
             // lblJugador
             // 

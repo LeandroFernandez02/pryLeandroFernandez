@@ -11,16 +11,14 @@ using System.Windows.Forms;
 namespace pryLeandroFernandez2
 {
     public partial class frmMenuJuego : Form
-    {        
+    {
         public frmMenuJuego()
         {
             InitializeComponent();
-
-            /*
+            
             pctFondo.Enabled = false;
             pictureBox2.Enabled = false;
-            pictureBox3.Enabled = false;      
-            */
+            pictureBox3.Enabled = false;               
         }
 
         private void pctFondo_Click(object sender, EventArgs e)
@@ -36,6 +34,23 @@ namespace pryLeandroFernandez2
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             abrirJuego();
+        }       
+
+        private void txtJugador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(txtJugador.Text))
+            {
+                e.Handled = true;
+
+                string varJugador = txtJugador.Text;
+
+                pctFondo.Enabled = true;
+                pictureBox2.Enabled = true;
+                pictureBox3.Enabled = true;
+
+                pnlJugador.Visible = false;
+                pnlJugador.Enabled = false;
+            }
         }
 
         private void abrirJuego()
@@ -43,19 +58,6 @@ namespace pryLeandroFernandez2
             frmJuego frmJuego = new frmJuego();
             this.Hide();
             frmJuego.Show();
-        }
-
-        private void txtJugador_KeyDown(object sender, KeyEventArgs e)
-        {
-            /*
-            // Si se presiona la tecla Enter y el cuadro de texto no está vacío, habilita los Picture Box
-            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(txtJugador.Text))
-            {
-                pctFondo.Enabled = true;
-                pictureBox2.Enabled = true;
-                pictureBox3.Enabled = true;
-            }
-            */
         }
     }
 }
