@@ -11,10 +11,11 @@ namespace pryLeandroFernandez2
     {
         private Timer timerDisparo;
         private List<PictureBox> listaDisparos;      
-        private clsEnemigo enemigo;
+        private clsEnemigo objEnemigo;
         private frmJuego FrmJuego;
         private Timer timerMoverEnemigo;
-        private int varContador;       
+        private int varContador;
+        bool enemigoDestruido = false;
 
         // Constructor
         public clsJugador(clsEnemigo enemigo, frmJuego frmJuego, Timer timerMoverEnemigo )
@@ -25,7 +26,7 @@ namespace pryLeandroFernandez2
 
             listaDisparos = new List<PictureBox>();            
 
-            this.enemigo = enemigo;
+            this.objEnemigo = enemigo;
             FrmJuego = frmJuego;
             this.timerMoverEnemigo = timerMoverEnemigo;           
         }
@@ -71,36 +72,37 @@ namespace pryLeandroFernandez2
 
         PictureBox pctDisparo = new PictureBox();
         // Funcion crearDisparo
+
         void crearDisparo(frmJuego FrmJuego, PictureBox nave)
         {
-            pctDisparo = new PictureBox();
+            PictureBox pctDisparo = new PictureBox(); // Crea una nueva instancia de PictureBox para cada disparo
             pctDisparo.Image = pryLeandroFernandez3.Properties.Resources.disparo1;
             pctDisparo.Size = new Size(30, 30);
-            pctDisparo.BackColor = Color.Black;
+            pctDisparo.BackColor = Color.Transparent;
             pctDisparo.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctDisparo.Location = new Point(nave.Location.X + 30, 300 );
+            pctDisparo.Location = new Point(nave.Location.X + 30, 300);
             enemigoDestruido = false;
 
             FrmJuego.Controls.Add(pctDisparo);
             pctDisparo.BringToFront();
 
-            listaDisparos.Add(pctDisparo);
+            listaDisparos.Add(pctDisparo); // Agrega el nuevo disparo a la lista
             if (!timerDisparo.Enabled)
             {
                 timerDisparo.Start();
             }
         }
-         
-        bool enemigoDestruido = false; //bandera      
+
+        private Point ultimaPosicionEnemigoDestruido;
         private void timerDisparo_Tick(object sender, EventArgs e)
         {
+            // Si sale del formulario
             foreach (var disparo in listaDisparos.ToList())
             {
                 disparo.Top -= 8; // Velocidad
 
                 if (disparo.Top <= 0)
-                {
-                    // Remover el PictureBox del disparo del formulario y de la lista
+                {                 
                     listaDisparos.Remove(disparo);
                     if (disparo.Parent != null)
                     {
@@ -108,48 +110,66 @@ namespace pryLeandroFernandez2
                     }
                     disparo.Dispose();
                 }
-                else if (enemigo != null && enemigo.pctEnemigo != null && disparo.Bounds.IntersectsWith(enemigo.pctEnemigo.Bounds))
+                else
                 {
-                    if (!enemigoDestruido)
+                    // Colision
+                    foreach (var enemigo in objEnemigo.ObtenerListaEnemigos())
                     {
-                        enemigoDestruido = true; // Marcar el enemigo como destruido para evitar incrementos adicionales del puntaje
+                        if (disparo.Bounds.IntersectsWith(enemigo.Bounds))
+                        {
+                            if (!enemigoDestruido)
+                            {
+                                enemigoDestruido = true;
+                                varContador++;
+                                FrmJuego.ActualizarPuntaje(varContador);
+                            }
 
-                        varContador++;
-                        FrmJuego.ActualizarPuntaje(varContador);
+                            // Remover disparo de la lista y del formulario
+                            listaDisparos.Remove(disparo);
+                            FrmJuego.Controls.Remove(disparo);
+                            disparo.Dispose();
+
+                            // Sacar posicion de enemigo
+                            ultimaPosicionEnemigoDestruido = enemigo.Location;
+                            explosion();
+
+                            // Remover el enemigo de la lista y del formulario
+                            objEnemigo.ObtenerListaEnemigos().Remove(enemigo);                           
+                            if (enemigo.Parent != null)
+                            {
+                                enemigo.Parent.Controls.Remove(enemigo);
+                            }
+                            enemigo.Dispose();
+                            
+                            break; 
+                        }
                     }
-
-                    listaDisparos.Remove(disparo);
-                    if (disparo.Parent != null)
-                    {
-                        disparo.Parent.Controls.Remove(disparo);
-                    }
-                    disparo.Dispose();
-
-                    colision();
                 }
             }
         }
-        void colision()
+
+        void explosion()
         {
-            FrmJuego.Controls.Remove(pctDisparo);
-            pctDisparo.Dispose();
+            PictureBox pctExplosion = new PictureBox();
+            pctExplosion.Image = pryLeandroFernandez3.Properties.Resources.explosion_enemigo_2_unscreen;
+            pctExplosion.Size = new Size(50, 50);
+            pctExplosion.BackColor = Color.Black;
+            pctExplosion.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctExplosion.Location = ultimaPosicionEnemigoDestruido;
 
-            timerMoverEnemigo.Stop();
-
-            enemigo.pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.explosion_enemigo_2_unscreen;
+            FrmJuego.Controls.Add(pctExplosion);
+            pctExplosion.BringToFront();
 
             Timer timerExplosion = new Timer();
             timerExplosion.Interval = 300;
-            timerExplosion.Tick += (sender, args) =>
+            timerExplosion.Tick += (sender, arges) =>
             {
-                FrmJuego.Controls.Remove(enemigo.pctEnemigo);
-                enemigo.pctEnemigo.Dispose();
+                FrmJuego.Controls.Remove(pctExplosion);
+                pctExplosion.Dispose();
 
                 timerExplosion.Stop();
-                timerExplosion.Dispose();
             };
-            timerExplosion.Start();
+            timerExplosion.Start();          
         }
     }
-
 }

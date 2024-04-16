@@ -29,13 +29,12 @@ namespace pryLeandroFernandez2
         public void mover(frmJuego FrmJuego)
         {
             Timer timerGeneradorEnemigos = new Timer();
-            timerGeneradorEnemigos.Interval = 2000; // dos segundos
+            timerGeneradorEnemigos.Interval = 1500; // dos segundos
             timerGeneradorEnemigos.Tick += (sender, arges) =>
             {
                 crearEnemigo(FrmJuego);
             };
-            timerGeneradorEnemigos.Start();
-            
+            timerGeneradorEnemigos.Start();           
         }
 
         // Funion crearEnemigo
@@ -91,6 +90,7 @@ namespace pryLeandroFernandez2
                 timerMover.Start();
             }
         }
+      
 
         // Procedimiento timerMover
         private void timerMover_Tick(object sender, EventArgs e)
@@ -110,6 +110,11 @@ namespace pryLeandroFernandez2
                     enemigo.Dispose();
                 }
             }
+        }
+
+        public List<PictureBox> ObtenerListaEnemigos()
+        {
+            return listaEnemigos;
         }
     }
 }
