@@ -63,7 +63,7 @@ namespace pryLeandroFernandez2
 
         private void lblSalir_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
