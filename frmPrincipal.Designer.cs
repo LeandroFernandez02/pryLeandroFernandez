@@ -33,7 +33,10 @@
             mnsFirma = new ToolStripMenuItem();
             mnsJuegos = new ToolStripMenuItem();
             mnsGalaga = new ToolStripMenuItem();
+            stpBaseDeDatos = new StatusStrip();
+            tstpConexionBD = new ToolStripStatusLabel();
             mnsPrincipal.SuspendLayout();
+            stpBaseDeDatos.SuspendLayout();
             SuspendLayout();
             // 
             // mnsPrincipal
@@ -55,7 +58,7 @@
             // mnsFirma
             // 
             mnsFirma.Name = "mnsFirma";
-            mnsFirma.Size = new Size(180, 22);
+            mnsFirma.Size = new Size(104, 22);
             mnsFirma.Text = "Firma";
             mnsFirma.Click += mnsFirma_Click;
             // 
@@ -69,22 +72,40 @@
             // mnsGalaga
             // 
             mnsGalaga.Name = "mnsGalaga";
-            mnsGalaga.Size = new Size(180, 22);
+            mnsGalaga.Size = new Size(110, 22);
             mnsGalaga.Text = "Galaga";
             mnsGalaga.Click += mnsGalaga_Click;
+            // 
+            // stpBaseDeDatos
+            // 
+            stpBaseDeDatos.Items.AddRange(new ToolStripItem[] { tstpConexionBD });
+            stpBaseDeDatos.Location = new Point(0, 428);
+            stpBaseDeDatos.Name = "stpBaseDeDatos";
+            stpBaseDeDatos.Size = new Size(800, 22);
+            stpBaseDeDatos.TabIndex = 1;
+            stpBaseDeDatos.Text = "statusStrip1";
+            // 
+            // tstpConexionBD
+            // 
+            tstpConexionBD.Name = "tstpConexionBD";
+            tstpConexionBD.Size = new Size(0, 17);
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(stpBaseDeDatos);
             Controls.Add(mnsPrincipal);
             MainMenuStrip = mnsPrincipal;
             Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio";
+            Load += frmPrincipal_Load;
             mnsPrincipal.ResumeLayout(false);
             mnsPrincipal.PerformLayout();
+            stpBaseDeDatos.ResumeLayout(false);
+            stpBaseDeDatos.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -96,5 +117,7 @@
         private ToolStripMenuItem mnsFirma;
         private ToolStripMenuItem mnsJuegos;
         private ToolStripMenuItem mnsGalaga;
+        private StatusStrip stpBaseDeDatos;
+        private ToolStripStatusLabel tstpConexionBD;
     }
 }

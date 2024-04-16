@@ -1,10 +1,15 @@
+using pryLeandroFernandez3;
+
 namespace pryLeandroFernandez2
 {
     public partial class frmPrincipal : Form
     {
+        clsConexionBD objConexionBD;
         public frmPrincipal()
         {
             InitializeComponent();
+            objConexionBD = new clsConexionBD();
+
         }
 
         private void mnsFirma_Click(object sender, EventArgs e)
@@ -19,6 +24,12 @@ namespace pryLeandroFernandez2
             frmMenuJuego frmMenuJuego = new frmMenuJuego();
             this.Hide();
             frmMenuJuego.Show();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            objConexionBD.conexionBD(tstpConexionBD);
+
         }
     }
 }
