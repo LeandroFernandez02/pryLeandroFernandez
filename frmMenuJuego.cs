@@ -15,10 +15,11 @@ namespace pryLeandroFernandez2
         public frmMenuJuego()
         {
             InitializeComponent();
+
             
             pctFondo.Enabled = false;
             pictureBox2.Enabled = false;
-            pictureBox3.Enabled = false;               
+            pictureBox3.Enabled = false;
         }
 
         private void pctFondo_Click(object sender, EventArgs e)
@@ -34,15 +35,15 @@ namespace pryLeandroFernandez2
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             abrirJuego();
-        }       
-
+        }
+        private string varJugador;
         private void txtJugador_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(txtJugador.Text))
             {
                 e.Handled = true;
 
-                string varJugador = txtJugador.Text;
+                varJugador = txtJugador.Text;
 
                 pctFondo.Enabled = true;
                 pictureBox2.Enabled = true;

@@ -13,15 +13,16 @@ namespace pryLeandroFernandez2
     public partial class frmJuego : Form
     {
         clsJugador objJugador;
-        clsEnemigo objEnemigo;
+        clsEnemigo objEnemigo;      
+
         public frmJuego()
         {
             InitializeComponent();
-            
-            objEnemigo = new clsEnemigo();
-            objJugador = new clsJugador(objEnemigo, this, objEnemigo.timerMover);           
 
-            objEnemigo.mover(this);                     
+            objEnemigo = new clsEnemigo();
+            objJugador = new clsJugador(objEnemigo, this, objEnemigo.timerMover);            
+
+            objEnemigo.mover(this);
         }
 
         private void frmJuego_KeyDown(object sender, KeyEventArgs e)
@@ -31,7 +32,12 @@ namespace pryLeandroFernandez2
         }
         public void ActualizarPuntaje(int puntaje)
         {
-            lblContador.Text = "Puntaje = "+ puntaje.ToString(); // Actualiza el texto del Label con el nuevo puntaje
+            lblContador.Text = "Puntaje = " + puntaje.ToString(); // Actualiza el texto del Label con el nuevo puntaje
+        }
+
+        private void lblSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

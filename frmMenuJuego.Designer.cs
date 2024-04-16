@@ -76,9 +76,9 @@
             pnlJugador.BackColor = Color.Black;
             pnlJugador.Controls.Add(txtJugador);
             pnlJugador.Controls.Add(lblJugador);
-            pnlJugador.Location = new Point(289, 221);
+            pnlJugador.Location = new Point(191, 221);
             pnlJugador.Name = "pnlJugador";
-            pnlJugador.Size = new Size(223, 49);
+            pnlJugador.Size = new Size(421, 49);
             pnlJugador.TabIndex = 3;
             // 
             // txtJugador
@@ -86,20 +86,22 @@
             txtJugador.BackColor = Color.Black;
             txtJugador.BorderStyle = BorderStyle.None;
             txtJugador.Cursor = Cursors.IBeam;
+            txtJugador.Font = new Font("Emulogic", 9.749999F, FontStyle.Regular, GraphicsUnit.Point);
             txtJugador.ForeColor = Color.White;
-            txtJugador.Location = new Point(72, 15);
+            txtJugador.Location = new Point(221, 19);
             txtJugador.Name = "txtJugador";
-            txtJugador.Size = new Size(100, 16);
+            txtJugador.Size = new Size(100, 17);
             txtJugador.TabIndex = 1;
             txtJugador.KeyPress += txtJugador_KeyPress;
             // 
             // lblJugador
             // 
             lblJugador.AutoSize = true;
+            lblJugador.Font = new Font("Emulogic", 9.749999F, FontStyle.Regular, GraphicsUnit.Point);
             lblJugador.ForeColor = Color.White;
-            lblJugador.Location = new Point(24, 15);
+            lblJugador.Location = new Point(122, 19);
             lblJugador.Name = "lblJugador";
-            lblJugador.Size = new Size(42, 15);
+            lblJugador.Size = new Size(99, 17);
             lblJugador.TabIndex = 0;
             lblJugador.Text = "Player:";
             // 
@@ -113,6 +115,7 @@
             Controls.Add(pictureBox3);
             Controls.Add(pctFondo);
             Name = "frmMenuJuego";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Galaga";
             ((System.ComponentModel.ISupportInitialize)pctFondo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

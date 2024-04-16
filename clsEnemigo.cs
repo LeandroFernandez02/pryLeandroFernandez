@@ -25,6 +25,8 @@ namespace pryLeandroFernandez2
             listaEnemigos = new List<PictureBox>(); 
         }
 
+
+
         // Metodo mover
         public void mover(frmJuego FrmJuego)
         {
