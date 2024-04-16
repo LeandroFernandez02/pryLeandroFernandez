@@ -80,7 +80,7 @@ namespace pryLeandroFernandez2
                     break;               
             }
             //pctEnemigo.Size = new Size(50, 50);
-            pctEnemigo.BackColor = Color.Black;
+            pctEnemigo.BackColor = Color.Transparent;
             pctEnemigo.SizeMode = PictureBoxSizeMode.StretchImage;
             pctEnemigo.Location = new Point(randomX, -50);
             FrmJuego.Controls.Add(pctEnemigo);

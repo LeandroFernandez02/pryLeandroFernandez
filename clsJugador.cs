@@ -43,14 +43,14 @@ namespace pryLeandroFernandez2
             {
                 case Keys.Left:
 
-                    if (pctNave.Left >= 30)
+                    if (pctNave.Left >= 10)
                     {
                         pctNave.Left -= 30;
                     }
                     break;
 
                 case Keys.Right:
-                    if (pctNave.Right <= 770)
+                    if (pctNave.Right <= 780)
                     {
                         pctNave.Left += 30;
                     }

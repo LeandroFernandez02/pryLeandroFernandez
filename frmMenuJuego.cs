@@ -16,7 +16,7 @@ namespace pryLeandroFernandez2
         {
             InitializeComponent();
 
-            
+
             pctFondo.Enabled = false;
             pictureBox2.Enabled = false;
             pictureBox3.Enabled = false;
@@ -59,6 +59,11 @@ namespace pryLeandroFernandez2
             frmJuego frmJuego = new frmJuego();
             this.Hide();
             frmJuego.Show();
+        }
+
+        private void lblSalir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

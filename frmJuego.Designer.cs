@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
             pctFondo = new PictureBox();
             pctNave = new PictureBox();
             lblContador = new Label();
@@ -51,7 +52,7 @@
             // 
             pctNave.BackColor = Color.Black;
             pctNave.Image = pryLeandroFernandez3.Properties.Resources.nave_galaga2;
-            pctNave.Location = new Point(357, 341);
+            pctNave.Location = new Point(356, 341);
             pctNave.Name = "pctNave";
             pctNave.Size = new Size(89, 75);
             pctNave.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -66,9 +67,9 @@
             lblContador.ForeColor = Color.White;
             lblContador.Location = new Point(12, 12);
             lblContador.Name = "lblContador";
-            lblContador.Size = new Size(107, 14);
+            lblContador.Size = new Size(87, 14);
             lblContador.TabIndex = 2;
-            lblContador.Text = "Puntaje = ";
+            lblContador.Text = "Score = ";
             // 
             // lblSalir
             // 
@@ -95,6 +96,7 @@
             Controls.Add(pctNave);
             Controls.Add(pctFondo);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmJuego";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Galaga";

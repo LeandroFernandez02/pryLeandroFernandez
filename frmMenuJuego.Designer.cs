@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuJuego));
             pctFondo = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pnlJugador = new Panel();
             txtJugador = new TextBox();
             lblJugador = new Label();
+            lblSalir = new Label();
             ((System.ComponentModel.ISupportInitialize)pctFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -105,15 +107,31 @@
             lblJugador.TabIndex = 0;
             lblJugador.Text = "Player:";
             // 
+            // lblSalir
+            // 
+            lblSalir.AutoSize = true;
+            lblSalir.BackColor = Color.Black;
+            lblSalir.Cursor = Cursors.Hand;
+            lblSalir.Font = new Font("Emulogic", 9.749999F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSalir.ForeColor = Color.White;
+            lblSalir.Location = new Point(767, 9);
+            lblSalir.Name = "lblSalir";
+            lblSalir.Size = new Size(21, 17);
+            lblSalir.TabIndex = 4;
+            lblSalir.Text = "x";
+            lblSalir.Click += lblSalir_Click;
+            // 
             // frmMenuJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblSalir);
             Controls.Add(pnlJugador);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox3);
             Controls.Add(pctFondo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMenuJuego";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Galaga";
@@ -123,6 +141,7 @@
             pnlJugador.ResumeLayout(false);
             pnlJugador.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -133,5 +152,6 @@
         private Panel pnlJugador;
         private TextBox txtJugador;
         private Label lblJugador;
+        private Label lblSalir;
     }
 }
