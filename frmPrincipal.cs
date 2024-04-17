@@ -28,7 +28,7 @@ namespace pryLeandroFernandez2
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            objConexionBD.conexionBD(tstpConexionBD);
+            objConexionBD.conectarBD(tstpConexionBD);
 
         }
     }

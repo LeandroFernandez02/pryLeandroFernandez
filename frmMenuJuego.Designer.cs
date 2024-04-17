@@ -131,6 +131,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox3);
             Controls.Add(pctFondo);
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMenuJuego";
             StartPosition = FormStartPosition.CenterScreen;

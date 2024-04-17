@@ -14,6 +14,7 @@ namespace pryLeandroFernandez2
         public Timer timerMover;
         private List<PictureBox> listaEnemigos;
         public PictureBox pctEnemigo;
+        Timer timerGeneradorEnemigos = new Timer();
 
         // Constructor
         public clsEnemigo()
@@ -25,12 +26,15 @@ namespace pryLeandroFernandez2
             listaEnemigos = new List<PictureBox>(); 
         }
 
-
-
+        public Timer TimerGeneradorEnemigo
+        {
+            get { return timerGeneradorEnemigos; }
+        }
+   
         // Metodo mover
         public void mover(frmJuego FrmJuego)
         {
-            Timer timerGeneradorEnemigos = new Timer();
+            //Timer timerGeneradorEnemigos = new Timer();
             timerGeneradorEnemigos.Interval = 1500; // dos segundos
             timerGeneradorEnemigos.Tick += (sender, arges) =>
             {

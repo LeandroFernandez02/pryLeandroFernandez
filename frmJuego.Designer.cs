@@ -33,6 +33,7 @@
             pctNave = new PictureBox();
             lblContador = new Label();
             lblSalir = new Label();
+            lblPausa = new Label();
             ((System.ComponentModel.ISupportInitialize)pctFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctNave).BeginInit();
             SuspendLayout();
@@ -85,12 +86,26 @@
             lblSalir.Text = "x";
             lblSalir.Click += lblSalir_Click;
             // 
+            // lblPausa
+            // 
+            lblPausa.AutoSize = true;
+            lblPausa.BackColor = Color.Black;
+            lblPausa.Font = new Font("Emulogic", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPausa.ForeColor = Color.White;
+            lblPausa.Location = new Point(691, 12);
+            lblPausa.Name = "lblPausa";
+            lblPausa.Size = new Size(57, 14);
+            lblPausa.TabIndex = 4;
+            lblPausa.Text = "Pause";
+            lblPausa.Click += lblPausa_Click;
+            // 
             // frmJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblPausa);
             Controls.Add(lblSalir);
             Controls.Add(lblContador);
             Controls.Add(pctNave);
@@ -113,5 +128,6 @@
         private PictureBox pctNave;
         private Label lblContador;
         private Label lblSalir;
+        private Label lblPausa;
     }
 }

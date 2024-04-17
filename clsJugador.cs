@@ -12,7 +12,7 @@ namespace pryLeandroFernandez2
         private Timer timerDisparo;
         private List<PictureBox> listaDisparos;      
         private clsEnemigo objEnemigo;
-        private frmJuego FrmJuego;
+        private frmJuego FrmJuego;       
         private Timer timerMoverEnemigo;
         private int varContador;
         bool enemigoDestruido = false;
@@ -27,11 +27,19 @@ namespace pryLeandroFernandez2
             listaDisparos = new List<PictureBox>();            
 
             this.objEnemigo = enemigo;
-            FrmJuego = frmJuego;
+            FrmJuego = frmJuego;           
             this.timerMoverEnemigo = timerMoverEnemigo;           
         }
 
-        
+        public Timer TimerDisparo
+        {
+            get { return timerDisparo; }
+        }
+
+        public Timer TimerMoverEnemigo
+        {
+            get { return timerMoverEnemigo; }
+        }
 
         // Metodo mover
         public void mover(PictureBox nave, KeyEventArgs e)
@@ -94,7 +102,8 @@ namespace pryLeandroFernandez2
         }
 
         private Point ultimaPosicionEnemigoDestruido;
-        private void timerDisparo_Tick(object sender, EventArgs e)
+
+        public void timerDisparo_Tick(object sender, EventArgs e)
         {
             // Si sale del formulario
             foreach (var disparo in listaDisparos.ToList())

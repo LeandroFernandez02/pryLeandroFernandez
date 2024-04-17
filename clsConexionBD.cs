@@ -12,7 +12,7 @@ namespace pryLeandroFernandez3
 {
     internal class clsConexionBD
     {
-        public void conexionBD(ToolStripStatusLabel tstpBD)
+        public void conectarBD(ToolStripStatusLabel tstpBD)
         {
             try
             {
@@ -25,7 +25,6 @@ namespace pryLeandroFernandez3
             }
             catch (Exception error)
             {
-
                 MessageBox.Show(error.Message);
             }           
         }            
