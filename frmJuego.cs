@@ -14,6 +14,7 @@ namespace pryLeandroFernandez2
     {
         clsJugador objJugador;
         clsEnemigo objEnemigo;
+        bool juegoPausado;
 
         public frmJuego()
         {
@@ -23,16 +24,25 @@ namespace pryLeandroFernandez2
             objJugador = new clsJugador(objEnemigo, this, objEnemigo.timerMover);
 
             objEnemigo.mover(this);
+
         }
 
         private void frmJuego_KeyDown(object sender, KeyEventArgs e)
         {
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                    pausar();
+                    e.Handled = true;
+                    break;
+            }
+
             if (!juegoPausado) // Verifica si el juego no está pausado
             {
                 objJugador.mover(pctNave, e);
                 objJugador.disparar(this, pctNave, e);
-            }           
-            
+            }
+
         }
         public void ActualizarPuntaje(int puntaje)
         {
@@ -44,38 +54,66 @@ namespace pryLeandroFernandez2
             Application.Exit();
         }
 
-        private void pctFondo_Click(object sender, EventArgs e)
-        {
-
-        }
-        bool juegoPausado;
         private void lblPausa_Click(object sender, EventArgs e)
+        {
+            pausar();
+        }
+
+        void pausar()
         {
             switch (juegoPausado)
             {
                 case false:
                     juegoPausado = true;
                     lblPausa.Text = "Unpause";
-                    
+
 
                     objEnemigo.TimerGeneradorEnemigo.Stop();
                     objJugador.TimerDisparo.Stop();
                     objJugador.TimerMoverEnemigo.Stop();
-
+                    pnlPausa.BringToFront();
+                    pnlPausa.Visible = true;
 
                     break;
 
                 case true:
                     juegoPausado = false;
                     lblPausa.Text = "Pause";
-                    
+
 
                     objEnemigo.TimerGeneradorEnemigo.Start();
                     objJugador.TimerDisparo.Start();
                     objJugador.TimerMoverEnemigo.Start();
+                    pnlPausa.Visible = false;
 
                     break;
-            }           
+            }
+        }
+
+        private void btnDespausar_Click(object sender, EventArgs e)
+        {
+            juegoPausado = false;
+            lblPausa.Text = "Pause";
+
+
+            objEnemigo.TimerGeneradorEnemigo.Start();
+            objJugador.TimerDisparo.Start();
+            objJugador.TimerMoverEnemigo.Start();
+            pnlPausa.Visible = false;
+
+            this.Focus();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frmPrincipal = new frmPrincipal();
+            this.Hide();
+            frmPrincipal.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

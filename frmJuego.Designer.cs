@@ -34,8 +34,15 @@
             lblContador = new Label();
             lblSalir = new Label();
             lblPausa = new Label();
+            pnlPausa = new Panel();
+            btnMenu = new Button();
+            btnSalir = new Button();
+            btnDespausar = new Button();
+            pctLogo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pctFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctNave).BeginInit();
+            pnlPausa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pctLogo).BeginInit();
             SuspendLayout();
             // 
             // pctFondo
@@ -53,7 +60,7 @@
             // 
             pctNave.BackColor = Color.Black;
             pctNave.Image = pryLeandroFernandez3.Properties.Resources.nave_galaga2;
-            pctNave.Location = new Point(356, 341);
+            pctNave.Location = new Point(356, 350);
             pctNave.Name = "pctNave";
             pctNave.Size = new Size(89, 75);
             pctNave.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,15 +106,81 @@
             lblPausa.Text = "Pause";
             lblPausa.Click += lblPausa_Click;
             // 
+            // pnlPausa
+            // 
+            pnlPausa.BackColor = Color.Transparent;
+            pnlPausa.Controls.Add(btnMenu);
+            pnlPausa.Controls.Add(btnSalir);
+            pnlPausa.Controls.Add(btnDespausar);
+            pnlPausa.Controls.Add(pctLogo);
+            pnlPausa.Location = new Point(281, 74);
+            pnlPausa.Name = "pnlPausa";
+            pnlPausa.Size = new Size(240, 261);
+            pnlPausa.TabIndex = 5;
+            pnlPausa.Visible = false;
+            // 
+            // btnMenu
+            // 
+            btnMenu.Cursor = Cursors.Hand;
+            btnMenu.FlatStyle = FlatStyle.Flat;
+            btnMenu.Font = new Font("Emulogic", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMenu.ForeColor = Color.White;
+            btnMenu.Location = new Point(59, 167);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(121, 32);
+            btnMenu.TabIndex = 3;
+            btnMenu.Text = "Menu";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Emulogic", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(59, 209);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(121, 32);
+            btnSalir.TabIndex = 2;
+            btnSalir.Text = "Close";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnDespausar
+            // 
+            btnDespausar.Cursor = Cursors.Hand;
+            btnDespausar.FlatStyle = FlatStyle.Flat;
+            btnDespausar.Font = new Font("Emulogic", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDespausar.ForeColor = Color.White;
+            btnDespausar.Location = new Point(59, 125);
+            btnDespausar.Name = "btnDespausar";
+            btnDespausar.Size = new Size(121, 32);
+            btnDespausar.TabIndex = 1;
+            btnDespausar.Text = "Unpause";
+            btnDespausar.UseVisualStyleBackColor = true;
+            btnDespausar.Click += btnDespausar_Click;
+            // 
+            // pctLogo
+            // 
+            pctLogo.Image = pryLeandroFernandez3.Properties.Resources.Galaga_logo_svg;
+            pctLogo.Location = new Point(26, 18);
+            pctLogo.Name = "pctLogo";
+            pctLogo.Size = new Size(188, 96);
+            pctLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctLogo.TabIndex = 0;
+            pctLogo.TabStop = false;
+            // 
             // frmJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblPausa);
             Controls.Add(lblSalir);
+            Controls.Add(lblPausa);
             Controls.Add(lblContador);
+            Controls.Add(pnlPausa);
             Controls.Add(pctNave);
             Controls.Add(pctFondo);
             FormBorderStyle = FormBorderStyle.None;
@@ -118,6 +191,8 @@
             KeyDown += frmJuego_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pctFondo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctNave).EndInit();
+            pnlPausa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pctLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,5 +204,10 @@
         private Label lblContador;
         private Label lblSalir;
         private Label lblPausa;
+        private Panel pnlPausa;
+        private Button btnDespausar;
+        private PictureBox pctLogo;
+        private Button btnMenu;
+        private Button btnSalir;
     }
 }
