@@ -54,8 +54,9 @@ namespace pryLeandroFernandez2
             switch (juegoPausado)
             {
                 case false:
-                    lblPausa.Text = "Pause";
                     juegoPausado = true;
+                    lblPausa.Text = "Unpause";
+                    
 
                     objEnemigo.TimerGeneradorEnemigo.Stop();
                     objJugador.TimerDisparo.Stop();
@@ -65,8 +66,9 @@ namespace pryLeandroFernandez2
                     break;
 
                 case true:
-                    lblPausa.Text = "Unpause";
                     juegoPausado = false;
+                    lblPausa.Text = "Pause";
+                    
 
                     objEnemigo.TimerGeneradorEnemigo.Start();
                     objJugador.TimerDisparo.Start();
