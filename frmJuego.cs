@@ -31,10 +31,7 @@ namespace pryLeandroFernandez2
             {
                 objJugador.mover(pctNave, e);
                 objJugador.disparar(this, pctNave, e);
-            }
-            
-            objJugador.mover(pctNave, e);
-            objJugador.disparar(this, pctNave, e);
+            }           
             
         }
         public void ActualizarPuntaje(int puntaje)
