@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Timer = System.Windows.Forms.Timer;
+using System.Media;
 
 namespace pryLeandroFernandez2
 {
@@ -94,6 +95,10 @@ namespace pryLeandroFernandez2
             FrmJuego.Controls.Add(pctDisparo);
             pctDisparo.BringToFront();
 
+            SoundPlayer sonidoDisparo = new SoundPlayer();
+            sonidoDisparo.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\disparo nave.wav"; 
+            sonidoDisparo.Play();
+
             listaDisparos.Add(pctDisparo); // Agrega el nuevo disparo a la lista
             if (!timerDisparo.Enabled)
             {
@@ -168,6 +173,29 @@ namespace pryLeandroFernandez2
 
             FrmJuego.Controls.Add(pctExplosion);
             pctExplosion.BringToFront();
+
+            SoundPlayer sonidoExplosion = new SoundPlayer();
+            Random rnd = new Random();
+            rnd.Next(1, 5);
+            switch (rnd.Next(1, 5))
+            {
+                case 1:
+                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo 1.wav";
+                    sonidoExplosion.Play();
+                    break;
+                case 2:
+                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo2.wav";
+                    sonidoExplosion.Play();
+                    break;
+                case 3:
+                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo3.wav";
+                    sonidoExplosion.Play();
+                    break;
+                case 4:
+                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo4.wav";
+                    sonidoExplosion.Play();
+                    break;
+            }
 
             Timer timerExplosion = new Timer();
             timerExplosion.Interval = 300;

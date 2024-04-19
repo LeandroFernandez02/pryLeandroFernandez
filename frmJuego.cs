@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace pryLeandroFernandez2
 {
@@ -25,6 +26,9 @@ namespace pryLeandroFernandez2
 
             objEnemigo.mover(this);
 
+            SoundPlayer sonidoAmbiente = new SoundPlayer();
+            sonidoAmbiente.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\Juego Ambiente.wav";
+            sonidoAmbiente.Play();
         }
 
         private void frmJuego_KeyDown(object sender, KeyEventArgs e)
