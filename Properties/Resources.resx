@@ -157,4 +157,31 @@
   <data name="Galaga_logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Galaga_logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="disparo_nave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\disparo nave.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enemigo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enemigo31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enemigo41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enemigo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo 1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Inicio_musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\Inicio musica.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Juego_Ambiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\Juego Ambiente.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nombreSonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\nombreSonido.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_03_In_Game_Ambience" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\03 In-Game Ambience.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

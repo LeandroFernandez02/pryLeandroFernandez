@@ -61,12 +61,48 @@ namespace pryLeandroFernandez3.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _03_In_Game_Ambience {
+            get {
+                return ResourceManager.GetStream("_03_In_Game_Ambience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream disparo_nave {
+            get {
+                return ResourceManager.GetStream("disparo_nave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap disparo1 {
             get {
                 object obj = ResourceManager.GetObject("disparo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream enemigo_1 {
+            get {
+                return ResourceManager.GetStream("enemigo_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream enemigo2 {
+            get {
+                return ResourceManager.GetStream("enemigo2", resourceCulture);
             }
         }
         
@@ -81,12 +117,30 @@ namespace pryLeandroFernandez3.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream enemigo31 {
+            get {
+                return ResourceManager.GetStream("enemigo31", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap enemigo4 {
             get {
                 object obj = ResourceManager.GetObject("enemigo4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream enemigo41 {
+            get {
+                return ResourceManager.GetStream("enemigo41", resourceCulture);
             }
         }
         
@@ -181,12 +235,39 @@ namespace pryLeandroFernandez3.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Inicio_musica {
+            get {
+                return ResourceManager.GetStream("Inicio_musica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Juego_Ambiente {
+            get {
+                return ResourceManager.GetStream("Juego_Ambiente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap nave_galaga2 {
             get {
                 object obj = ResourceManager.GetObject("nave galaga2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.IO.UnmanagedMemoryStream similar a System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream nombreSonido {
+            get {
+                return ResourceManager.GetStream("nombreSonido", resourceCulture);
             }
         }
     }

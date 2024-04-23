@@ -24,10 +24,10 @@ namespace pryLeandroFernandez2
             objEnemigo = new clsEnemigo();
             objJugador = new clsJugador(objEnemigo, this, objEnemigo.timerMover);
 
-            objEnemigo.mover(this);
+            objEnemigo.mover(this);           
 
             SoundPlayer sonidoAmbiente = new SoundPlayer();
-            sonidoAmbiente.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\Juego Ambiente.wav";
+            sonidoAmbiente.Stream = pryLeandroFernandez3.Properties.Resources.Juego_Ambiente;
             sonidoAmbiente.Play();
         }
 

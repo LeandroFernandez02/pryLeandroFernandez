@@ -95,8 +95,8 @@ namespace pryLeandroFernandez2
             FrmJuego.Controls.Add(pctDisparo);
             pctDisparo.BringToFront();
 
-            SoundPlayer sonidoDisparo = new SoundPlayer();
-            sonidoDisparo.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\disparo nave.wav"; 
+            SoundPlayer sonidoDisparo = new SoundPlayer(); 
+            sonidoDisparo.Stream = pryLeandroFernandez3.Properties.Resources.disparo_nave;
             sonidoDisparo.Play();
 
             listaDisparos.Add(pctDisparo); // Agrega el nuevo disparo a la lista
@@ -179,20 +179,20 @@ namespace pryLeandroFernandez2
             rnd.Next(1, 5);
             switch (rnd.Next(1, 5))
             {
-                case 1:
-                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo 1.wav";
+                case 1:                   
+                    sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo_1;
                     sonidoExplosion.Play();
                     break;
                 case 2:
-                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo2.wav";
+                    sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo2;
                     sonidoExplosion.Play();
                     break;
                 case 3:
-                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo3.wav";
+                    sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo31;
                     sonidoExplosion.Play();
                     break;
                 case 4:
-                    sonidoExplosion.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\enemigo4.wav";
+                    sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo41;
                     sonidoExplosion.Play();
                     break;
             }

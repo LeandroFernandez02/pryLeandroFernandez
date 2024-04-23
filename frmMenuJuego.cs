@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.IO;
 
 namespace pryLeandroFernandez2
 {
@@ -15,12 +16,11 @@ namespace pryLeandroFernandez2
     {
         public frmMenuJuego()
         {
-            InitializeComponent();
-          
+            InitializeComponent();          
+
             SoundPlayer sonidoNombre = new SoundPlayer();
-            sonidoNombre.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\nombreSonido.wav";
+            sonidoNombre.Stream = pryLeandroFernandez3.Properties.Resources.nombreSonido ;
             sonidoNombre.Play();
-            
 
             pctFondo.Enabled = false;
             pictureBox2.Enabled = false;
@@ -46,10 +46,10 @@ namespace pryLeandroFernandez2
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(txtJugador.Text))
             {
-                e.Handled = true;
+                e.Handled = true;               
 
                 SoundPlayer sonidoInicio = new SoundPlayer();
-                sonidoInicio.SoundLocation = "C:\\Users\\pupif\\OneDrive\\Escritorio\\pryLeandroFernandez\\Resources\\Sonido\\Inicio musica.wav";
+                sonidoInicio.Stream = pryLeandroFernandez3.Properties.Resources.Inicio_musica;
                 sonidoInicio.Play();
 
                 varJugador = txtJugador.Text;
