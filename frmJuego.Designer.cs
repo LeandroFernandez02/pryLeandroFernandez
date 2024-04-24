@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
             pctFondo = new PictureBox();
             pctNave = new PictureBox();
@@ -39,10 +40,17 @@
             btnSalir = new Button();
             btnDespausar = new Button();
             pctLogo = new PictureBox();
+            timerDetectarColision = new System.Windows.Forms.Timer(components);
+            pctVidaUno = new PictureBox();
+            pctVidaDos = new PictureBox();
+            pctVidaTres = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pctFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctNave).BeginInit();
             pnlPausa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctVidaUno).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctVidaDos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctVidaTres).BeginInit();
             SuspendLayout();
             // 
             // pctFondo
@@ -171,12 +179,49 @@
             pctLogo.TabIndex = 0;
             pctLogo.TabStop = false;
             // 
+            // timerDetectarColision
+            // 
+            timerDetectarColision.Enabled = true;
+            // 
+            // pctVidaUno
+            // 
+            pctVidaUno.Image = pryLeandroFernandez3.Properties.Resources.corazonBlanco;
+            pctVidaUno.Location = new Point(12, 29);
+            pctVidaUno.Name = "pctVidaUno";
+            pctVidaUno.Size = new Size(38, 32);
+            pctVidaUno.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctVidaUno.TabIndex = 6;
+            pctVidaUno.TabStop = false;
+            // 
+            // pctVidaDos
+            // 
+            pctVidaDos.Image = pryLeandroFernandez3.Properties.Resources.corazonBlanco;
+            pctVidaDos.Location = new Point(56, 27);
+            pctVidaDos.Name = "pctVidaDos";
+            pctVidaDos.Size = new Size(38, 34);
+            pctVidaDos.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctVidaDos.TabIndex = 7;
+            pctVidaDos.TabStop = false;
+            // 
+            // pctVidaTres
+            // 
+            pctVidaTres.Image = pryLeandroFernandez3.Properties.Resources.corazonBlanco;
+            pctVidaTres.Location = new Point(100, 29);
+            pctVidaTres.Name = "pctVidaTres";
+            pctVidaTres.Size = new Size(38, 32);
+            pctVidaTres.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctVidaTres.TabIndex = 8;
+            pctVidaTres.TabStop = false;
+            // 
             // frmJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(800, 450);
+            Controls.Add(pctVidaTres);
+            Controls.Add(pctVidaDos);
+            Controls.Add(pctVidaUno);
             Controls.Add(lblSalir);
             Controls.Add(lblPausa);
             Controls.Add(lblContador);
@@ -193,6 +238,9 @@
             ((System.ComponentModel.ISupportInitialize)pctNave).EndInit();
             pnlPausa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pctLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctVidaUno).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctVidaDos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctVidaTres).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -209,5 +257,9 @@
         private PictureBox pctLogo;
         private Button btnMenu;
         private Button btnSalir;
+        private System.Windows.Forms.Timer timerDetectarColision;
+        private PictureBox pctVidaUno;
+        private PictureBox pctVidaDos;
+        private PictureBox pctVidaTres;
     }
 }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Timer = System.Windows.Forms.Timer;
 using System.Media;
+using System.Runtime.Intrinsics.X86;
+using Microsoft.VisualBasic;
 
 namespace pryLeandroFernandez2
 {
@@ -15,11 +17,12 @@ namespace pryLeandroFernandez2
         private clsEnemigo objEnemigo;
         private frmJuego FrmJuego;       
         private Timer timerMoverEnemigo;
+        private Timer timerGeneradorEnemigo;
         private int varContador;
         bool enemigoDestruido = false;
 
         // Constructor
-        public clsJugador(clsEnemigo enemigo, frmJuego frmJuego, Timer timerMoverEnemigo )
+        public clsJugador(clsEnemigo enemigo, frmJuego frmJuego, Timer timerMoverEnemigo, Timer timerGeneradorEnemigo)
         {            
             timerDisparo = new Timer();
             timerDisparo.Interval = 1;
@@ -28,8 +31,9 @@ namespace pryLeandroFernandez2
             listaDisparos = new List<PictureBox>();            
 
             this.objEnemigo = enemigo;
-            FrmJuego = frmJuego;           
-            this.timerMoverEnemigo = timerMoverEnemigo;           
+            FrmJuego = frmJuego;
+            this.timerMoverEnemigo = timerMoverEnemigo;
+            this.timerGeneradorEnemigo = timerGeneradorEnemigo;
         }
 
         public Timer TimerDisparo
@@ -95,7 +99,7 @@ namespace pryLeandroFernandez2
             FrmJuego.Controls.Add(pctDisparo);
             pctDisparo.BringToFront();
 
-            SoundPlayer sonidoDisparo = new SoundPlayer(); 
+            SoundPlayer sonidoDisparo = new SoundPlayer();
             sonidoDisparo.Stream = pryLeandroFernandez3.Properties.Resources.disparo_nave;
             sonidoDisparo.Play();
 
@@ -148,19 +152,148 @@ namespace pryLeandroFernandez2
                             explosion();
 
                             // Remover el enemigo de la lista y del formulario
-                            objEnemigo.ObtenerListaEnemigos().Remove(enemigo);                           
+                            objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
                             if (enemigo.Parent != null)
                             {
                                 enemigo.Parent.Controls.Remove(enemigo);
                             }
                             enemigo.Dispose();
                             
-                            break; 
-                        }
-                    }
+                            break;
+                        }                        
+                    }                    
                 }
             }
         }
+
+        //int varVida = 3;
+        //bool gameOver = false;
+        //bool colisionOcurrida = false; // Variable para rastrear si ya ocurrió una colisión
+
+        //public void colisionNavePrincipal(PictureBox nave, PictureBox vidaUno, PictureBox vidaDos, PictureBox vidaTres)
+        //{
+        //    // Crear un temporizador para controlar la colisión
+        //    Timer timerControlColision = new Timer();
+        //    timerControlColision.Interval = 100;
+
+        //    // Evento que se ejecuta cada vez que el temporizador hace tick
+        //    timerControlColision.Tick += (sender, arges) =>
+        //    {
+        //        // Verificar si el juego ha terminado
+        //        if (!gameOver)
+        //        {
+        //            // Iterar sobre los enemigos para verificar colisiones
+        //            foreach (var enemigo in objEnemigo.ObtenerListaEnemigos())
+        //            {
+        //                if (enemigo.Bounds.IntersectsWith(nave.Bounds))
+        //                {
+        //                    // Acciones a realizar en caso de colisión
+        //                    if (!colisionOcurrida)
+        //                    {
+        //                        // Si hay vidas restantes, quitar una vida
+        //                        if (varVida > 0)
+        //                        {
+        //                            varVida--;
+        //                            // Remover la representación visual de la vida correspondiente
+        //                            switch (varVida)
+        //                            {
+        //                                case 2:
+        //                                    FrmJuego.Controls.Remove(vidaTres);
+        //                                    break;
+        //                                case 1:
+        //                                    FrmJuego.Controls.Remove(vidaDos);
+        //                                    break;
+        //                                case 0:
+        //                                    FrmJuego.Controls.Remove(vidaUno);
+        //                                    gameOver = true; // Marcar el final del juego
+        //                                    MessageBox.Show("Game Over");
+        //                                    break;
+        //                            }
+        //                        }
+        //                        // Marcar que ya ocurrió una colisión para evitar múltiples descuentos de vida en un solo tick
+        //                        colisionOcurrida = true;
+        //                    }
+        //                    // Salir del bucle ya que se detectó una colisión
+        //                    break;
+        //                }
+        //                else
+        //                {
+        //                    // Reiniciar la variable de colisión para la próxima iteración si no hay colisión
+        //                    colisionOcurrida = false;
+        //                }
+        //            }
+        //        }
+        //    };
+
+        //    // Iniciar el temporizador
+        //    timerControlColision.Start();
+        //}
+
+        int vidasRestantes = 3;
+        bool gameOver = false;
+        bool colisionDetectada = false;
+
+        public void colisionNavePrincipal(PictureBox nave, PictureBox vidaUno, PictureBox vidaDos, PictureBox vidaTres)
+        {
+            Timer timerControlColision = new Timer();
+            timerControlColision.Interval = 400;
+
+            // Manejador de eventos para la detección de colisiones
+            timerControlColision.Tick += (sender, arges) =>
+            {
+                if (!gameOver)
+                {
+                    // Iterar sobre los enemigos para verificar colisiones
+                    foreach (var enemigo in objEnemigo.ObtenerListaEnemigos())
+                    {
+                        if (enemigo.Bounds.IntersectsWith(nave.Bounds))
+                        {   
+                            // Si es la primera colisión después de un tiempo, descontar una vida
+                            if (!colisionDetectada)
+                            {
+                                colisionDetectada = true;
+                                if (vidasRestantes > 0)
+                                {
+                                    vidasRestantes--;
+                                    // Remover la representación visual de la vida correspondiente
+                                    switch (vidasRestantes)
+                                    {
+                                        case 2:
+                                            FrmJuego.Controls.Remove(vidaTres);
+                                            break;
+                                        case 1:
+                                            FrmJuego.Controls.Remove(vidaDos);
+                                            break;
+                                        case 0:
+                                            FrmJuego.Controls.Remove(vidaUno);
+                                            gameOver = true;
+                                            timerDisparo.Stop();
+                                            timerMoverEnemigo.Stop();
+                                            timerControlColision.Stop();
+                                            timerGeneradorEnemigo.Stop();
+                                            MessageBox.Show("Game Over");
+                                            break;
+                                    }
+                                }
+                            }
+                            break; // Salir del bucle ya que se detectó una colisión
+                        }
+                        else
+                        {
+                            // Si no hay colisión, resetear el indicador de colisión detectada
+                            colisionDetectada = false;
+                        }
+                    }
+                }
+            };
+
+            timerControlColision.Start();
+        }
+
+
+
+
+
 
         void explosion()
         {
@@ -206,7 +339,7 @@ namespace pryLeandroFernandez2
 
                 timerExplosion.Stop();
             };
-            timerExplosion.Start();          
+            timerExplosion.Start();
         }
     }
 }

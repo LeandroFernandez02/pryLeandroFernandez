@@ -15,7 +15,7 @@ namespace pryLeandroFernandez2
         public Timer timerMover;
         private List<PictureBox> listaEnemigos;
         public PictureBox pctEnemigo;
-        Timer timerGeneradorEnemigos = new Timer();
+        public Timer timerGeneradorEnemigos = new Timer();
         int intervaloInicial = 1500; // Intervalo inicial del temporizador en milisegundos
         int intervaloMinimo = 800; // Intervalo mínimo del temporizador en milisegundos
 

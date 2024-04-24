@@ -118,70 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="enemigo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="explosion-enemigo-2-unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\explosion-enemigo-2-unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nave galaga2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nave galaga2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="galaga espacio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\galaga espacio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="disparo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\disparo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="galaga_enemigo2-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\galaga_enemigo2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="galaga inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\galaga inicio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="galaga_enemigo-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\galaga_enemigo-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Galaga_logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Galaga_logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="disparo_nave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sonido\disparo nave.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="enemigo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sonido\enemigo2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="enemigo31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sonido\enemigo3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="enemigo41" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sonido\enemigo4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="enemigo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sonido\enemigo 1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Inicio_musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sonido\Inicio musica.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Juego_Ambiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sonido\Juego Ambiente.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="nombreSonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sonido\nombreSonido.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="enemigo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="enemigo41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo4.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="explosion-enemigo-2-unscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\explosion-enemigo-2-unscreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="galaga inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\galaga inicio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_03_In_Game_Ambience" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sonido\03 In-Game Ambience.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="galaga_enemigo-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\galaga_enemigo-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\enemigo 1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nave galaga2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nave galaga2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="galaga_enemigo2-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\galaga_enemigo2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nombreSonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\nombreSonido.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Inicio_musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\Inicio musica.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="disparo_nave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonido\disparo nave.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="galaga espacio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\galaga espacio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disparo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disparo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corazonBlanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corazonBlanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

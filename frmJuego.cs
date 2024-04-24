@@ -22,13 +22,15 @@ namespace pryLeandroFernandez2
             InitializeComponent();
 
             objEnemigo = new clsEnemigo();
-            objJugador = new clsJugador(objEnemigo, this, objEnemigo.timerMover);
+            objJugador = new clsJugador(objEnemigo, this, objEnemigo.timerMover, objEnemigo.timerGeneradorEnemigos);
 
-            objEnemigo.mover(this);           
+            objEnemigo.mover(this);
 
             SoundPlayer sonidoAmbiente = new SoundPlayer();
             sonidoAmbiente.Stream = pryLeandroFernandez3.Properties.Resources.Juego_Ambiente;
             sonidoAmbiente.Play();
+
+            objJugador.colisionNavePrincipal(pctNave,pctVidaUno,pctVidaDos,pctVidaTres);
         }
 
         private void frmJuego_KeyDown(object sender, KeyEventArgs e)
@@ -119,5 +121,6 @@ namespace pryLeandroFernandez2
         {
             Application.Exit();
         }
+
     }
 }
