@@ -166,69 +166,6 @@ namespace pryLeandroFernandez2
             }
         }
 
-        //int varVida = 3;
-        //bool gameOver = false;
-        //bool colisionOcurrida = false; // Variable para rastrear si ya ocurrió una colisión
-
-        //public void colisionNavePrincipal(PictureBox nave, PictureBox vidaUno, PictureBox vidaDos, PictureBox vidaTres)
-        //{
-        //    // Crear un temporizador para controlar la colisión
-        //    Timer timerControlColision = new Timer();
-        //    timerControlColision.Interval = 100;
-
-        //    // Evento que se ejecuta cada vez que el temporizador hace tick
-        //    timerControlColision.Tick += (sender, arges) =>
-        //    {
-        //        // Verificar si el juego ha terminado
-        //        if (!gameOver)
-        //        {
-        //            // Iterar sobre los enemigos para verificar colisiones
-        //            foreach (var enemigo in objEnemigo.ObtenerListaEnemigos())
-        //            {
-        //                if (enemigo.Bounds.IntersectsWith(nave.Bounds))
-        //                {
-        //                    // Acciones a realizar en caso de colisión
-        //                    if (!colisionOcurrida)
-        //                    {
-        //                        // Si hay vidas restantes, quitar una vida
-        //                        if (varVida > 0)
-        //                        {
-        //                            varVida--;
-        //                            // Remover la representación visual de la vida correspondiente
-        //                            switch (varVida)
-        //                            {
-        //                                case 2:
-        //                                    FrmJuego.Controls.Remove(vidaTres);
-        //                                    break;
-        //                                case 1:
-        //                                    FrmJuego.Controls.Remove(vidaDos);
-        //                                    break;
-        //                                case 0:
-        //                                    FrmJuego.Controls.Remove(vidaUno);
-        //                                    gameOver = true; // Marcar el final del juego
-        //                                    MessageBox.Show("Game Over");
-        //                                    break;
-        //                            }
-        //                        }
-        //                        // Marcar que ya ocurrió una colisión para evitar múltiples descuentos de vida en un solo tick
-        //                        colisionOcurrida = true;
-        //                    }
-        //                    // Salir del bucle ya que se detectó una colisión
-        //                    break;
-        //                }
-        //                else
-        //                {
-        //                    // Reiniciar la variable de colisión para la próxima iteración si no hay colisión
-        //                    colisionOcurrida = false;
-        //                }
-        //            }
-        //        }
-        //    };
-
-        //    // Iniciar el temporizador
-        //    timerControlColision.Start();
-        //}
-
         int vidasRestantes = 3;
         bool gameOver = false;
         bool colisionDetectada = false;
@@ -260,12 +197,27 @@ namespace pryLeandroFernandez2
                                     {
                                         case 2:
                                             FrmJuego.Controls.Remove(vidaTres);
+                                            vidaTres.Dispose();
+                                            FrmJuego.Controls.Remove(enemigo);
+                                            objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
+                                            enemigo.Dispose();
+
                                             break;
                                         case 1:
                                             FrmJuego.Controls.Remove(vidaDos);
+                                            vidaDos.Dispose();
+                                            FrmJuego.Controls.Remove(enemigo);
+                                            objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
+                                            enemigo.Dispose();
+
                                             break;
                                         case 0:
                                             FrmJuego.Controls.Remove(vidaUno);
+                                            vidaUno.Dispose();
+                                            FrmJuego.Controls.Remove(enemigo);
+                                            objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
+                                            enemigo.Dispose();
+
                                             gameOver = true;
                                             timerDisparo.Stop();
                                             timerMoverEnemigo.Stop();
@@ -286,14 +238,8 @@ namespace pryLeandroFernandez2
                     }
                 }
             };
-
             timerControlColision.Start();
         }
-
-
-
-
-
 
         void explosion()
         {
