@@ -197,6 +197,16 @@ namespace pryLeandroFernandez3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap explosionNave {
+            get {
+                object obj = ResourceManager.GetObject("explosionNave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap galaga_enemigo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("galaga_enemigo-removebg-preview", resourceCulture);
@@ -240,6 +250,16 @@ namespace pryLeandroFernandez3.Properties {
         internal static System.Drawing.Bitmap Galaga_logo_svg {
             get {
                 object obj = ResourceManager.GetObject("Galaga_logo.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameOver {
+            get {
+                object obj = ResourceManager.GetObject("gameOver", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -44,6 +44,9 @@
             pctVidaUno = new PictureBox();
             pctVidaDos = new PictureBox();
             pctVidaTres = new PictureBox();
+            pnlGameOver = new Panel();
+            btnReiniciar = new Button();
+            pctGameOver = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pctFondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctNave).BeginInit();
             pnlPausa.SuspendLayout();
@@ -51,6 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)pctVidaUno).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctVidaDos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctVidaTres).BeginInit();
+            pnlGameOver.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pctGameOver).BeginInit();
             SuspendLayout();
             // 
             // pctFondo
@@ -213,12 +218,47 @@
             pctVidaTres.TabIndex = 8;
             pctVidaTres.TabStop = false;
             // 
+            // pnlGameOver
+            // 
+            pnlGameOver.Controls.Add(btnReiniciar);
+            pnlGameOver.Controls.Add(pctGameOver);
+            pnlGameOver.Location = new Point(209, 129);
+            pnlGameOver.Name = "pnlGameOver";
+            pnlGameOver.Size = new Size(389, 175);
+            pnlGameOver.TabIndex = 9;
+            pnlGameOver.Visible = false;
+            // 
+            // btnReiniciar
+            // 
+            btnReiniciar.FlatStyle = FlatStyle.Flat;
+            btnReiniciar.Font = new Font("Emulogic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReiniciar.ForeColor = Color.White;
+            btnReiniciar.Location = new Point(131, 123);
+            btnReiniciar.Name = "btnReiniciar";
+            btnReiniciar.Size = new Size(121, 34);
+            btnReiniciar.TabIndex = 1;
+            btnReiniciar.Text = "restart";
+            btnReiniciar.UseVisualStyleBackColor = true;
+            btnReiniciar.Click += btnReiniciar_Click;
+            // 
+            // pctGameOver
+            // 
+            pctGameOver.Enabled = false;
+            pctGameOver.Image = pryLeandroFernandez3.Properties.Resources.gameOver;
+            pctGameOver.Location = new Point(72, 18);
+            pctGameOver.Name = "pctGameOver";
+            pctGameOver.Size = new Size(240, 88);
+            pctGameOver.SizeMode = PictureBoxSizeMode.CenterImage;
+            pctGameOver.TabIndex = 0;
+            pctGameOver.TabStop = false;
+            // 
             // frmJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(800, 450);
+            Controls.Add(pnlGameOver);
             Controls.Add(pctVidaTres);
             Controls.Add(pctVidaDos);
             Controls.Add(pctVidaUno);
@@ -241,6 +281,8 @@
             ((System.ComponentModel.ISupportInitialize)pctVidaUno).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctVidaDos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctVidaTres).EndInit();
+            pnlGameOver.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pctGameOver).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -261,5 +303,8 @@
         private PictureBox pctVidaUno;
         private PictureBox pctVidaDos;
         private PictureBox pctVidaTres;
+        private Panel pnlGameOver;
+        private Button btnReiniciar;
+        private PictureBox pctGameOver;
     }
 }

@@ -20,6 +20,8 @@ namespace pryLeandroFernandez2
         private Timer timerGeneradorEnemigo;
         private int varContador;
         bool enemigoDestruido = false;
+        private Point ultimaPosicionEnemigoDestruido;
+        private Point ultimaPosicionNave;
 
         // Constructor
         public clsJugador(clsEnemigo enemigo, frmJuego frmJuego, Timer timerMoverEnemigo, Timer timerGeneradorEnemigo)
@@ -69,7 +71,7 @@ namespace pryLeandroFernandez2
                     }
                     break;
             }
-
+            ultimaPosicionNave = nave.Location;
         }
 
         // Metodo disparar
@@ -110,7 +112,7 @@ namespace pryLeandroFernandez2
             }
         }
 
-        private Point ultimaPosicionEnemigoDestruido;
+        
 
         public void timerDisparo_Tick(object sender, EventArgs e)
         {
@@ -149,7 +151,7 @@ namespace pryLeandroFernandez2
 
                             // Sacar posicion de enemigo
                             ultimaPosicionEnemigoDestruido = enemigo.Location;
-                            explosion();
+                            explosionEnemigo();
 
                             // Remover el enemigo de la lista y del formulario
                             objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
@@ -170,29 +172,25 @@ namespace pryLeandroFernandez2
         bool gameOver = false;
         bool colisionDetectada = false;
 
-        public void colisionNavePrincipal(PictureBox nave, PictureBox vidaUno, PictureBox vidaDos, PictureBox vidaTres)
+        public void colisionNavePrincipal(PictureBox nave, PictureBox vidaUno, PictureBox vidaDos, PictureBox vidaTres, Panel pnlGameOver, PictureBox pctGameOver)
         {
             Timer timerControlColision = new Timer();
-            timerControlColision.Interval = 400;
+            timerControlColision.Interval = 200;
 
-            // Manejador de eventos para la detección de colisiones
             timerControlColision.Tick += (sender, arges) =>
             {
                 if (!gameOver)
                 {
-                    // Iterar sobre los enemigos para verificar colisiones
                     foreach (var enemigo in objEnemigo.ObtenerListaEnemigos())
                     {
                         if (enemigo.Bounds.IntersectsWith(nave.Bounds))
-                        {   
-                            // Si es la primera colisión después de un tiempo, descontar una vida
+                        {                               
                             if (!colisionDetectada)
                             {
                                 colisionDetectada = true;
                                 if (vidasRestantes > 0)
                                 {
-                                    vidasRestantes--;
-                                    // Remover la representación visual de la vida correspondiente
+                                    vidasRestantes--;                                   
                                     switch (vidasRestantes)
                                     {
                                         case 2:
@@ -214,25 +212,26 @@ namespace pryLeandroFernandez2
                                         case 0:
                                             FrmJuego.Controls.Remove(vidaUno);
                                             vidaUno.Dispose();
+
                                             FrmJuego.Controls.Remove(enemigo);
                                             objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
                                             enemigo.Dispose();
 
+                                            FrmJuego.Controls.Remove(nave);
+                                            nave.Dispose();
+
                                             gameOver = true;
-                                            timerDisparo.Stop();
-                                            timerMoverEnemigo.Stop();
                                             timerControlColision.Stop();
-                                            timerGeneradorEnemigo.Stop();
-                                            MessageBox.Show("Game Over");
+                                            explosionNave(nave, pnlGameOver, pctGameOver);
+                                            
                                             break;
                                     }
                                 }
                             }
-                            break; // Salir del bucle ya que se detectó una colisión
+                            break;
                         }
                         else
                         {
-                            // Si no hay colisión, resetear el indicador de colisión detectada
                             colisionDetectada = false;
                         }
                     }
@@ -241,7 +240,42 @@ namespace pryLeandroFernandez2
             timerControlColision.Start();
         }
 
-        void explosion()
+        
+
+        void explosionNave(PictureBox nave, Panel pnlGameOver, PictureBox pctGameOver)
+        {          
+            timerDisparo.Stop();
+            timerMoverEnemigo.Stop();           
+            timerGeneradorEnemigo.Stop();
+
+            PictureBox pctExplosionNave = new PictureBox();
+            pctExplosionNave.Image = pryLeandroFernandez3.Properties.Resources.explosionNave;
+            pctExplosionNave .Size = new Size(99, 85);
+            pctExplosionNave.BackColor = Color.Black;
+            pctExplosionNave.SizeMode = PictureBoxSizeMode.StretchImage;
+            pctExplosionNave.Location = ultimaPosicionNave;
+
+            FrmJuego.Controls.Add(pctExplosionNave);
+            pctExplosionNave.BringToFront();
+
+            Timer timerExplosionNave = new Timer();
+            timerExplosionNave.Interval = 1000;
+            timerExplosionNave.Tick += (sender, arges) =>
+            {
+                FrmJuego.Controls.Remove(pctExplosionNave);
+                pctExplosionNave.Dispose();
+
+                timerExplosionNave.Stop();
+                //MessageBox.Show("Game Over");
+
+                pnlGameOver.Visible = true;
+                pctGameOver.Enabled = true;
+                pnlGameOver.BringToFront();
+            };
+            timerExplosionNave.Start();
+        }
+
+        void explosionEnemigo()
         {
             PictureBox pctExplosion = new PictureBox();
             pctExplosion.Image = pryLeandroFernandez3.Properties.Resources.explosion_enemigo_2_unscreen;
@@ -261,18 +295,22 @@ namespace pryLeandroFernandez2
                 case 1:                   
                     sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo_1;
                     sonidoExplosion.Play();
+                    sonidoExplosion.Dispose();
                     break;
                 case 2:
                     sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo2;
                     sonidoExplosion.Play();
+                    sonidoExplosion.Dispose();
                     break;
                 case 3:
                     sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo31;
                     sonidoExplosion.Play();
+                    sonidoExplosion.Dispose();
                     break;
                 case 4:
                     sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources.enemigo41;
                     sonidoExplosion.Play();
+                    sonidoExplosion.Dispose();
                     break;
             }
 
@@ -283,7 +321,7 @@ namespace pryLeandroFernandez2
                 FrmJuego.Controls.Remove(pctExplosion);
                 pctExplosion.Dispose();
 
-                timerExplosion.Stop();
+                timerExplosion.Stop();                
             };
             timerExplosion.Start();
         }

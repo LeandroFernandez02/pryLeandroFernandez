@@ -30,7 +30,7 @@ namespace pryLeandroFernandez2
             sonidoAmbiente.Stream = pryLeandroFernandez3.Properties.Resources.Juego_Ambiente;
             sonidoAmbiente.Play();
 
-            objJugador.colisionNavePrincipal(pctNave,pctVidaUno,pctVidaDos,pctVidaTres);
+            objJugador.colisionNavePrincipal(pctNave, pctVidaUno, pctVidaDos, pctVidaTres, pnlGameOver, pctGameOver);
         }
 
         private void frmJuego_KeyDown(object sender, KeyEventArgs e)
@@ -122,5 +122,14 @@ namespace pryLeandroFernandez2
             Application.Exit();
         }
 
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            ReiniciarJuego();
+        }
+
+        private void ReiniciarJuego()
+        {
+            
+        }
     }
 }
