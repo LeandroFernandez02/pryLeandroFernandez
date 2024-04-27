@@ -124,12 +124,9 @@ namespace pryLeandroFernandez2
 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
-            ReiniciarJuego();
-        }
-
-        private void ReiniciarJuego()
-        {
-            
-        }
+            frmMenuJuego frmMenuJuego = new frmMenuJuego();
+            this.Hide();
+            frmMenuJuego.Show();           
+        }        
     }
 }

@@ -256,18 +256,18 @@ namespace pryLeandroFernandez2
             pctExplosionNave.Location = ultimaPosicionNave;
 
             FrmJuego.Controls.Add(pctExplosionNave);
-            pctExplosionNave.BringToFront();
+            pctExplosionNave.BringToFront();          
 
             Timer timerExplosionNave = new Timer();
             timerExplosionNave.Interval = 1000;
             timerExplosionNave.Tick += (sender, arges) =>
-            {
+            {              
                 FrmJuego.Controls.Remove(pctExplosionNave);
                 pctExplosionNave.Dispose();
 
                 timerExplosionNave.Stop();
                 //MessageBox.Show("Game Over");
-
+               
                 pnlGameOver.Visible = true;
                 pctGameOver.Enabled = true;
                 pnlGameOver.BringToFront();
