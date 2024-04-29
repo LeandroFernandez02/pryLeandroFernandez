@@ -194,34 +194,43 @@ namespace pryLeandroFernandez2
                                     switch (vidasRestantes)
                                     {
                                         case 2:
+                                            // saco vida
                                             FrmJuego.Controls.Remove(vidaTres);
                                             vidaTres.Dispose();
+                                            // saco enemigo
                                             FrmJuego.Controls.Remove(enemigo);
                                             objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
                                             enemigo.Dispose();
 
                                             break;
                                         case 1:
+                                            // saco vida
                                             FrmJuego.Controls.Remove(vidaDos);
                                             vidaDos.Dispose();
+                                            // saco enemigo
                                             FrmJuego.Controls.Remove(enemigo);
                                             objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
                                             enemigo.Dispose();
 
                                             break;
                                         case 0:
+                                            // saco vida
                                             FrmJuego.Controls.Remove(vidaUno);
                                             vidaUno.Dispose();
 
+                                            // saco enemigo
                                             FrmJuego.Controls.Remove(enemigo);
                                             objEnemigo.ObtenerListaEnemigos().Remove(enemigo);
                                             enemigo.Dispose();
 
+                                            // saco la nave principal
                                             FrmJuego.Controls.Remove(nave);
                                             nave.Dispose();
 
                                             gameOver = true;
                                             timerControlColision.Stop();
+
+                                            // llamo funcion de explsion de la nave
                                             explosionNave(nave, pnlGameOver, pctGameOver);
                                             
                                             break;
@@ -243,11 +252,13 @@ namespace pryLeandroFernandez2
         
 
         void explosionNave(PictureBox nave, Panel pnlGameOver, PictureBox pctGameOver)
-        {          
+        {      
+            // detener timers
             timerDisparo.Stop();
             timerMoverEnemigo.Stop();           
             timerGeneradorEnemigo.Stop();
 
+            // creo objeto de explosion
             PictureBox pctExplosionNave = new PictureBox();
             pctExplosionNave.Image = pryLeandroFernandez3.Properties.Resources.explosionNave;
             pctExplosionNave .Size = new Size(99, 85);
@@ -255,18 +266,20 @@ namespace pryLeandroFernandez2
             pctExplosionNave.SizeMode = PictureBoxSizeMode.StretchImage;
             pctExplosionNave.Location = ultimaPosicionNave;
 
+            // agrego al formulario
             FrmJuego.Controls.Add(pctExplosionNave);
             pctExplosionNave.BringToFront();          
 
+            // timer para mostrar la explosion de la nave principal
             Timer timerExplosionNave = new Timer();
             timerExplosionNave.Interval = 1000;
             timerExplosionNave.Tick += (sender, arges) =>
-            {              
+            {      
+                // remuevo objeto de explosion una vez terminado el timer
                 FrmJuego.Controls.Remove(pctExplosionNave);
                 pctExplosionNave.Dispose();
 
-                timerExplosionNave.Stop();
-                //MessageBox.Show("Game Over");
+                timerExplosionNave.Stop();                
                
                 pnlGameOver.Visible = true;
                 pctGameOver.Enabled = true;
