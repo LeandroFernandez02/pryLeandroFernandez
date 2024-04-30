@@ -86,14 +86,14 @@ namespace pryLeandroFernandez2
         }
 
         PictureBox pctDisparo = new PictureBox();
-        // Funcion crearDisparo
 
+        // Funcion crearDisparo
         void crearDisparo(frmJuego FrmJuego, PictureBox nave)
         {
             PictureBox pctDisparo = new PictureBox(); // Crea una nueva instancia de PictureBox para cada disparo
             pctDisparo.Image = pryLeandroFernandez3.Properties.Resources.disparo1;
             pctDisparo.Size = new Size(30, 30);
-            pctDisparo.BackColor = Color.Transparent;
+            pctDisparo.BackColor = Color.Black;
             pctDisparo.SizeMode = PictureBoxSizeMode.StretchImage;
             pctDisparo.Location = new Point(nave.Location.X + 30, 300);
             enemigoDestruido = false;
@@ -112,8 +112,7 @@ namespace pryLeandroFernandez2
             }
         }
 
-        
-
+        // Si sale del formulario o hay colision
         public void timerDisparo_Tick(object sender, EventArgs e)
         {
             // Si sale del formulario
@@ -169,7 +168,7 @@ namespace pryLeandroFernandez2
         }
 
         int vidasRestantes = 3;
-        bool gameOver = false;
+        public bool gameOver = false;
         bool colisionDetectada = false;
 
         public void colisionNavePrincipal(PictureBox nave, PictureBox vidaUno, PictureBox vidaDos, PictureBox vidaTres, Panel pnlGameOver, PictureBox pctGameOver)
@@ -213,6 +212,7 @@ namespace pryLeandroFernandez2
                                             enemigo.Dispose();
 
                                             break;
+                                        // GAME OVER
                                         case 0:
                                             // saco vida
                                             FrmJuego.Controls.Remove(vidaUno);
@@ -268,7 +268,12 @@ namespace pryLeandroFernandez2
 
             // agrego al formulario
             FrmJuego.Controls.Add(pctExplosionNave);
-            pctExplosionNave.BringToFront();          
+            pctExplosionNave.BringToFront();  
+            
+            SoundPlayer sonidoExplosion = new SoundPlayer();
+            sonidoExplosion.Stream = pryLeandroFernandez3.Properties.Resources._16_Mistake_Music;
+            sonidoExplosion.Play();
+            sonidoExplosion.Dispose();
 
             // timer para mostrar la explosion de la nave principal
             Timer timerExplosionNave = new Timer();

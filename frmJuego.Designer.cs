@@ -121,7 +121,7 @@
             // 
             // pnlPausa
             // 
-            pnlPausa.BackColor = Color.Transparent;
+            pnlPausa.BackColor = Color.Black;
             pnlPausa.Controls.Add(btnMenu);
             pnlPausa.Controls.Add(btnSalir);
             pnlPausa.Controls.Add(btnDespausar);

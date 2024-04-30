@@ -44,6 +44,7 @@
             // 
             // pctFondo
             // 
+            pctFondo.BackColor = Color.Black;
             pctFondo.Image = pryLeandroFernandez3.Properties.Resources.galaga_inicio;
             pctFondo.Location = new Point(-12, -8);
             pctFondo.Name = "pctFondo";

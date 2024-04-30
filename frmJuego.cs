@@ -43,12 +43,11 @@ namespace pryLeandroFernandez2
                     break;
             }
 
-            if (!juegoPausado) // Verifica si el juego no está pausado
+            if (!juegoPausado && !objJugador.gameOver) // Verifica si el juego no está pausado y si todavia no perdió
             {
                 objJugador.mover(pctNave, e);
                 objJugador.disparar(this, pctNave, e);
-            }
-
+            }          
         }
         public void ActualizarPuntaje(int puntaje)
         {
