@@ -57,11 +57,11 @@ namespace pryLeandroFernandez2
             switch (rnd.Next(1,8))
             {
                 case 1:
-                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo_removebg_preview;
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo_removebg_preview_Photoroom_png_Photoroom;
                     pctEnemigo.Size = new Size(50, 50);
                     break;
                 case 2:
-                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo2_removebg_preview;
+                    pctEnemigo.Image = pryLeandroFernandez3.Properties.Resources.galaga_enemigo2_removebg_preview_Photoroom_png_Photoroom;
                     pctEnemigo.Size = new Size(60, 60);
                     break;
                 case 3:

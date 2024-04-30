@@ -91,7 +91,7 @@ namespace pryLeandroFernandez2
         void crearDisparo(frmJuego FrmJuego, PictureBox nave)
         {
             PictureBox pctDisparo = new PictureBox(); // Crea una nueva instancia de PictureBox para cada disparo
-            pctDisparo.Image = pryLeandroFernandez3.Properties.Resources.disparo1;
+            pctDisparo.Image = pryLeandroFernandez3.Properties.Resources.disparoGod;
             pctDisparo.Size = new Size(30, 30);
             pctDisparo.BackColor = Color.Black;
             pctDisparo.SizeMode = PictureBoxSizeMode.StretchImage;

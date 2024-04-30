@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Galaga_logo.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Galaga_logo.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_03_In_Game_Ambience" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sonido\03 In-Game Ambience.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -148,24 +145,6 @@
   <data name="explosionNave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\explosionNave.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="galaga_enemigo-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\galaga_enemigo-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nave galaga2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nave galaga2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="galaga_enemigo2-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\galaga_enemigo2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="nombreSonido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sonido\nombreSonido.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -181,19 +160,40 @@
   <data name="galaga espacio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\galaga espacio.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="enemigo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enemigo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemigo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="disparo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\disparo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="gameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gameOver.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_16_Mistake_Music" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16 Mistake Music.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="disparoGod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disparoGod.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemigo7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemigo7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="galaga_enemigo2_removebg_preview_Photoroom_png_Photoroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\galaga_enemigo2-removebg-preview-Photoroom.png-Photoroom.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="galaga_enemigo_removebg_preview_Photoroom_png_Photoroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\galaga_enemigo-removebg-preview-Photoroom.png-Photoroom.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Galaga_logo_svg_Photoroom_png_Photoroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Galaga_logo.svg-Photoroom.png-Photoroom.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="naveGalagaGod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\naveGalagaGod.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

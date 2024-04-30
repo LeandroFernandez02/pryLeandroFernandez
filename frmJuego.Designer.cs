@@ -72,7 +72,7 @@
             // pctNave
             // 
             pctNave.BackColor = Color.Black;
-            pctNave.Image = pryLeandroFernandez3.Properties.Resources.nave_galaga2;
+            pctNave.Image = pryLeandroFernandez3.Properties.Resources.naveGalagaGod;
             pctNave.Location = new Point(356, 350);
             pctNave.Name = "pctNave";
             pctNave.Size = new Size(89, 75);
@@ -176,7 +176,7 @@
             // 
             // pctLogo
             // 
-            pctLogo.Image = pryLeandroFernandez3.Properties.Resources.Galaga_logo_svg;
+            pctLogo.Image = pryLeandroFernandez3.Properties.Resources.Galaga_logo_svg_Photoroom_png_Photoroom;
             pctLogo.Location = new Point(26, 18);
             pctLogo.Name = "pctLogo";
             pctLogo.Size = new Size(188, 96);

@@ -100,9 +100,9 @@ namespace pryLeandroFernandez3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap disparo1 {
+        internal static System.Drawing.Bitmap disparoGod {
             get {
-                object obj = ResourceManager.GetObject("disparo1", resourceCulture);
+                object obj = ResourceManager.GetObject("disparoGod", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,9 +216,9 @@ namespace pryLeandroFernandez3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap galaga_enemigo_removebg_preview {
+        internal static System.Drawing.Bitmap galaga_enemigo_removebg_preview_Photoroom_png_Photoroom {
             get {
-                object obj = ResourceManager.GetObject("galaga_enemigo-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("galaga_enemigo_removebg_preview_Photoroom_png_Photoroom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,9 +226,9 @@ namespace pryLeandroFernandez3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap galaga_enemigo2_removebg_preview {
+        internal static System.Drawing.Bitmap galaga_enemigo2_removebg_preview_Photoroom_png_Photoroom {
             get {
-                object obj = ResourceManager.GetObject("galaga_enemigo2-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("galaga_enemigo2_removebg_preview_Photoroom_png_Photoroom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,9 +256,9 @@ namespace pryLeandroFernandez3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Galaga_logo_svg {
+        internal static System.Drawing.Bitmap Galaga_logo_svg_Photoroom_png_Photoroom {
             get {
-                object obj = ResourceManager.GetObject("Galaga_logo.svg", resourceCulture);
+                object obj = ResourceManager.GetObject("Galaga_logo_svg_Photoroom_png_Photoroom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -294,9 +294,9 @@ namespace pryLeandroFernandez3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nave_galaga2 {
+        internal static System.Drawing.Bitmap naveGalagaGod {
             get {
-                object obj = ResourceManager.GetObject("nave galaga2", resourceCulture);
+                object obj = ResourceManager.GetObject("naveGalagaGod", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
