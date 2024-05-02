@@ -33,6 +33,8 @@
             mnsFirma = new ToolStripMenuItem();
             mnsJuegos = new ToolStripMenuItem();
             mnsGalaga = new ToolStripMenuItem();
+            mnsDatos = new ToolStripMenuItem();
+            mnsMonstruario = new ToolStripMenuItem();
             stpBaseDeDatos = new StatusStrip();
             tstpConexionBD = new ToolStripStatusLabel();
             mnsPrincipal.SuspendLayout();
@@ -41,7 +43,7 @@
             // 
             // mnsPrincipal
             // 
-            mnsPrincipal.Items.AddRange(new ToolStripItem[] { mnsDibujos, mnsJuegos });
+            mnsPrincipal.Items.AddRange(new ToolStripItem[] { mnsDibujos, mnsJuegos, mnsDatos });
             mnsPrincipal.Location = new Point(0, 0);
             mnsPrincipal.Name = "mnsPrincipal";
             mnsPrincipal.Size = new Size(800, 24);
@@ -75,6 +77,20 @@
             mnsGalaga.Size = new Size(110, 22);
             mnsGalaga.Text = "Galaga";
             mnsGalaga.Click += mnsGalaga_Click;
+            // 
+            // mnsDatos
+            // 
+            mnsDatos.DropDownItems.AddRange(new ToolStripItem[] { mnsMonstruario });
+            mnsDatos.Name = "mnsDatos";
+            mnsDatos.Size = new Size(49, 20);
+            mnsDatos.Text = "Datos";
+            // 
+            // mnsMonstruario
+            // 
+            mnsMonstruario.Name = "mnsMonstruario";
+            mnsMonstruario.Size = new Size(139, 22);
+            mnsMonstruario.Text = "Monstruario";
+            mnsMonstruario.Click += mnsMonstruario_Click;
             // 
             // stpBaseDeDatos
             // 
@@ -119,5 +135,7 @@
         private ToolStripMenuItem mnsGalaga;
         private StatusStrip stpBaseDeDatos;
         private ToolStripStatusLabel tstpConexionBD;
+        private ToolStripMenuItem mnsDatos;
+        private ToolStripMenuItem mnsMonstruario;
     }
 }

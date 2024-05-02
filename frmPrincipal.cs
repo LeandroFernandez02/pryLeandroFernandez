@@ -31,5 +31,12 @@ namespace pryLeandroFernandez2
             objConexionBD.conectarBD(tstpConexionBD);
 
         }
+
+        private void mnsMonstruario_Click(object sender, EventArgs e)
+        {
+            frmMonstruario frmMonstruario = new frmMonstruario();
+            this.Hide();
+            frmMonstruario.Show();
+        }
     }
 }
