@@ -5,6 +5,8 @@ namespace pryLeandroFernandez2
     public partial class frmPrincipal : Form
     {
         clsConexionBD objConexionBD;
+        
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -37,6 +39,13 @@ namespace pryLeandroFernandez2
             frmMonstruario frmMonstruario = new frmMonstruario();
             this.Hide();
             frmMonstruario.Show();
+        }
+
+        private void mnsJugadores_Click(object sender, EventArgs e)
+        {
+            frmJugadores frmJugadores = new frmJugadores();
+            this.Hide();
+            frmJugadores.Show();
         }
     }
 }

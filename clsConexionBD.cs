@@ -10,11 +10,13 @@ using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Collections;
 using TreeView = System.Windows.Forms.TreeView;
+using pryLeandroFernandez2;
 
 namespace pryLeandroFernandez3
 {
     internal class clsConexionBD
     {
+        
         public void conectarBD(ToolStripStatusLabel tstpBD)
         {
             try
@@ -30,7 +32,39 @@ namespace pryLeandroFernandez3
             {
                 MessageBox.Show(error.Message);
             }
-        }       
+        }
+
+        public void cargarJugadorBD(string nombre, int puntaje)
+        {
+            try
+            {
+                string cadenaConexion = "Server = 127.0.0.1 ; DataBase = juegorol; Uid = root;  Pwd= ;";
+                MySqlConnection conn = new MySqlConnection(cadenaConexion);
+                conn.Open();
+                //-------------------------
+  
+                // Query SQL para insertar datos
+                string query = "INSERT INTO jugadores (Nombre, Puntaje) VALUES (@Nombre, @Puntaje)";
+
+                // Crear el comando con parámetros
+                using (MySqlCommand comando = new MySqlCommand(query, conn))
+                {
+                    comando.Parameters.AddWithValue("@Nombre", nombre);
+                    comando.Parameters.AddWithValue("@Puntaje", puntaje);
+
+                    // Ejecutar el comando
+                    comando.ExecuteNonQuery();
+                }
+                   
+
+                MessageBox.Show("Jugador y puntaje guardados correctamente.");
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
 
         public void cargarTrv(TreeView trv, ToolStripStatusLabel tstpBD)
         {

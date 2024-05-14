@@ -17,9 +17,13 @@ namespace pryLeandroFernandez2
         clsEnemigo objEnemigo;
         bool juegoPausado;
 
-        public frmJuego()
+        public string varNombre;
+
+        public frmJuego(string nombre)
         {
             InitializeComponent();
+
+            varNombre = nombre;
 
             objEnemigo = new clsEnemigo();
             objJugador = new clsJugador(objEnemigo, this, objEnemigo.timerMover, objEnemigo.timerGeneradorEnemigos);

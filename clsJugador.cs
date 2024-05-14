@@ -7,6 +7,7 @@ using Timer = System.Windows.Forms.Timer;
 using System.Media;
 using System.Runtime.Intrinsics.X86;
 using Microsoft.VisualBasic;
+using pryLeandroFernandez3;
 
 namespace pryLeandroFernandez2
 {
@@ -18,10 +19,12 @@ namespace pryLeandroFernandez2
         private frmJuego FrmJuego;       
         private Timer timerMoverEnemigo;
         private Timer timerGeneradorEnemigo;
-        private int varContador;
+        private int varPuntaje;
         bool enemigoDestruido = false;
         private Point ultimaPosicionEnemigoDestruido;
         private Point ultimaPosicionNave;
+
+        public string nombresin;               
 
         // Constructor
         public clsJugador(clsEnemigo enemigo, frmJuego frmJuego, Timer timerMoverEnemigo, Timer timerGeneradorEnemigo)
@@ -36,6 +39,7 @@ namespace pryLeandroFernandez2
             FrmJuego = frmJuego;
             this.timerMoverEnemigo = timerMoverEnemigo;
             this.timerGeneradorEnemigo = timerGeneradorEnemigo;
+            this.nombresin = frmJuego.varNombre;
         }
 
         public Timer TimerDisparo
@@ -139,8 +143,8 @@ namespace pryLeandroFernandez2
                             if (!enemigoDestruido)
                             {
                                 enemigoDestruido = true;
-                                varContador++;
-                                FrmJuego.ActualizarPuntaje(varContador);
+                                varPuntaje++;
+                                FrmJuego.ActualizarPuntaje(varPuntaje);
                             }
 
                             // Remover disparo de la lista y del formulario
@@ -232,6 +236,9 @@ namespace pryLeandroFernandez2
 
                                             // llamo funcion de explsion de la nave
                                             explosionNave(nave, pnlGameOver, pctGameOver);
+
+                                            //BD
+                                            cargarBD();
                                             
                                             break;
                                     }
@@ -342,6 +349,13 @@ namespace pryLeandroFernandez2
                 timerExplosion.Stop();                
             };
             timerExplosion.Start();
+        }
+    
+
+        void cargarBD()
+        {              
+            clsConexionBD objConexionBD = new clsConexionBD();
+            objConexionBD.cargarJugadorBD(nombresin, varPuntaje);                      
         }
     }
 }

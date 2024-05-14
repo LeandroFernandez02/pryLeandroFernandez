@@ -37,6 +37,7 @@
             mnsMonstruario = new ToolStripMenuItem();
             stpBaseDeDatos = new StatusStrip();
             tstpConexionBD = new ToolStripStatusLabel();
+            mnsJugadores = new ToolStripMenuItem();
             mnsPrincipal.SuspendLayout();
             stpBaseDeDatos.SuspendLayout();
             SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             // mnsDatos
             // 
-            mnsDatos.DropDownItems.AddRange(new ToolStripItem[] { mnsMonstruario });
+            mnsDatos.DropDownItems.AddRange(new ToolStripItem[] { mnsMonstruario, mnsJugadores });
             mnsDatos.Name = "mnsDatos";
             mnsDatos.Size = new Size(49, 20);
             mnsDatos.Text = "Datos";
@@ -88,7 +89,7 @@
             // mnsMonstruario
             // 
             mnsMonstruario.Name = "mnsMonstruario";
-            mnsMonstruario.Size = new Size(139, 22);
+            mnsMonstruario.Size = new Size(180, 22);
             mnsMonstruario.Text = "Monstruario";
             mnsMonstruario.Click += mnsMonstruario_Click;
             // 
@@ -105,6 +106,13 @@
             // 
             tstpConexionBD.Name = "tstpConexionBD";
             tstpConexionBD.Size = new Size(0, 17);
+            // 
+            // mnsJugadores
+            // 
+            mnsJugadores.Name = "mnsJugadores";
+            mnsJugadores.Size = new Size(180, 22);
+            mnsJugadores.Text = "Jugadores";
+            mnsJugadores.Click += mnsJugadores_Click;
             // 
             // frmPrincipal
             // 
@@ -137,5 +145,6 @@
         private ToolStripStatusLabel tstpConexionBD;
         private ToolStripMenuItem mnsDatos;
         private ToolStripMenuItem mnsMonstruario;
+        private ToolStripMenuItem mnsJugadores;
     }
 }
