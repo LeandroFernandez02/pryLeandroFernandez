@@ -66,10 +66,12 @@ namespace pryLeandroFernandez3
             }
         }
 
+        // ETAPA 7 -------------------------------------------------------------------------------------------------------------------------------
+
         public void cargarTrv(TreeView trv, ToolStripStatusLabel tstpBD)
         {
             string cadenaConexion = "Server=127.0.0.1;DataBase=juegorol;Uid=root;Pwd=;";
-            string consulta = "SELECT type, name, armor_class, strength, wisdom, intelligence, dexterity FROM monstruario";
+            string consulta = "SELECT type, name, armor_class, strength, wisdom, intelligence, dexterity, URL FROM monstruario";
 
             // Limpiar TreeView antes de cargar los datos
             trv.Nodes.Clear();
@@ -95,8 +97,12 @@ namespace pryLeandroFernandez3
 
                     foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        string tipoMonstruo = row["type"].ToString();
-                        string nombreMonstruo = row["name"].ToString();
+                        string tipoMonstruo = row["type"]?.ToString();
+                        string nombreMonstruo = row["name"]?.ToString();
+
+                        // si el valor es nulo, continua
+                        if (string.IsNullOrEmpty(tipoMonstruo) || string.IsNullOrEmpty(nombreMonstruo))
+                            continue;
 
                         TreeNode tipoNode = rootNode.Nodes.Find(tipoMonstruo, false).FirstOrDefault();
 
@@ -120,7 +126,7 @@ namespace pryLeandroFernandez3
             }
         }
 
-        public void TreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e, Label lblFuerza, Label lblDestreza, Label lblVelocidad, Label lblInteligencia, Label lblDanio)
+        public void seleccionarNodo(TreeNodeMouseClickEventArgs e, Label lblFuerza, Label lblDestreza, Label lblVelocidad, Label lblInteligencia, Label lblDanio)
         {
             // Obtener el nodo seleccionado
             TreeNode selectedNode = e.Node;
@@ -135,6 +141,6 @@ namespace pryLeandroFernandez3
                 lblInteligencia.Text = "Inteligencia: " + row["intelligence"].ToString();
                 lblDanio.Text = "Destreza: " + row["dexterity"].ToString();
             }
-        }
+        }       
     }
 }

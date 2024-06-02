@@ -30,17 +30,20 @@
         {
             trvMonstruario = new TreeView();
             pnlMonstruario = new Panel();
-            mrcCaracteristicas = new GroupBox();
+            mrcCaracteristicas8 = new GroupBox();
+            lstAPI = new ListBox();
+            mrcCaracteristicas7 = new GroupBox();
             lblDestreza = new Label();
             lblInteligencia = new Label();
-            lblVelocidad = new Label();
+            lblSabiduria = new Label();
             lblFortaleza = new Label();
             lblArmadura = new Label();
             statusStrip1 = new StatusStrip();
             tstpConexionBD = new ToolStripStatusLabel();
             tspConexionBD = new ToolStripStatusLabel();
             pnlMonstruario.SuspendLayout();
-            mrcCaracteristicas.SuspendLayout();
+            mrcCaracteristicas8.SuspendLayout();
+            mrcCaracteristicas7.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,36 +54,55 @@
             trvMonstruario.Size = new Size(262, 387);
             trvMonstruario.TabIndex = 0;
             trvMonstruario.NodeMouseDoubleClick += trvMonstruario_NodeMouseDoubleClick;
-            trvMonstruario.DoubleClick += trvMonstruario_DoubleClick;
             // 
             // pnlMonstruario
             // 
-            pnlMonstruario.Controls.Add(mrcCaracteristicas);
+            pnlMonstruario.Controls.Add(mrcCaracteristicas8);
+            pnlMonstruario.Controls.Add(mrcCaracteristicas7);
             pnlMonstruario.Controls.Add(trvMonstruario);
             pnlMonstruario.Location = new Point(69, 12);
             pnlMonstruario.Name = "pnlMonstruario";
             pnlMonstruario.Size = new Size(666, 393);
             pnlMonstruario.TabIndex = 1;
             // 
-            // mrcCaracteristicas
+            // mrcCaracteristicas8
             // 
-            mrcCaracteristicas.Controls.Add(lblDestreza);
-            mrcCaracteristicas.Controls.Add(lblInteligencia);
-            mrcCaracteristicas.Controls.Add(lblVelocidad);
-            mrcCaracteristicas.Controls.Add(lblFortaleza);
-            mrcCaracteristicas.Controls.Add(lblArmadura);
-            mrcCaracteristicas.Location = new Point(321, 40);
-            mrcCaracteristicas.Name = "mrcCaracteristicas";
-            mrcCaracteristicas.Size = new Size(244, 282);
-            mrcCaracteristicas.TabIndex = 1;
-            mrcCaracteristicas.TabStop = false;
-            mrcCaracteristicas.Text = "Caracteristicas";
+            mrcCaracteristicas8.Controls.Add(lstAPI);
+            mrcCaracteristicas8.Location = new Point(327, 149);
+            mrcCaracteristicas8.Name = "mrcCaracteristicas8";
+            mrcCaracteristicas8.Size = new Size(289, 226);
+            mrcCaracteristicas8.TabIndex = 5;
+            mrcCaracteristicas8.TabStop = false;
+            mrcCaracteristicas8.Text = "Caracteristicas: ETAPA 8";
+            // 
+            // lstAPI
+            // 
+            lstAPI.FormattingEnabled = true;
+            lstAPI.ItemHeight = 15;
+            lstAPI.Location = new Point(6, 20);
+            lstAPI.Name = "lstAPI";
+            lstAPI.Size = new Size(277, 199);
+            lstAPI.TabIndex = 5;
+            // 
+            // mrcCaracteristicas7
+            // 
+            mrcCaracteristicas7.Controls.Add(lblDestreza);
+            mrcCaracteristicas7.Controls.Add(lblInteligencia);
+            mrcCaracteristicas7.Controls.Add(lblSabiduria);
+            mrcCaracteristicas7.Controls.Add(lblFortaleza);
+            mrcCaracteristicas7.Controls.Add(lblArmadura);
+            mrcCaracteristicas7.Location = new Point(327, 17);
+            mrcCaracteristicas7.Name = "mrcCaracteristicas7";
+            mrcCaracteristicas7.Size = new Size(289, 106);
+            mrcCaracteristicas7.TabIndex = 1;
+            mrcCaracteristicas7.TabStop = false;
+            mrcCaracteristicas7.Text = "Caracteristicas: ETAPA 7";
             // 
             // lblDestreza
             // 
             lblDestreza.AutoSize = true;
             lblDestreza.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDestreza.Location = new Point(17, 130);
+            lblDestreza.Location = new Point(6, 83);
             lblDestreza.Name = "lblDestreza";
             lblDestreza.Size = new Size(62, 17);
             lblDestreza.TabIndex = 4;
@@ -90,27 +112,27 @@
             // 
             lblInteligencia.AutoSize = true;
             lblInteligencia.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInteligencia.Location = new Point(17, 106);
+            lblInteligencia.Location = new Point(6, 66);
             lblInteligencia.Name = "lblInteligencia";
             lblInteligencia.Size = new Size(76, 17);
             lblInteligencia.TabIndex = 3;
             lblInteligencia.Text = "Inteligencia:";
             // 
-            // lblVelocidad
+            // lblSabiduria
             // 
-            lblVelocidad.AutoSize = true;
-            lblVelocidad.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblVelocidad.Location = new Point(17, 82);
-            lblVelocidad.Name = "lblVelocidad";
-            lblVelocidad.Size = new Size(66, 17);
-            lblVelocidad.TabIndex = 2;
-            lblVelocidad.Text = "Sabiduria:";
+            lblSabiduria.AutoSize = true;
+            lblSabiduria.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSabiduria.Location = new Point(6, 49);
+            lblSabiduria.Name = "lblSabiduria";
+            lblSabiduria.Size = new Size(66, 17);
+            lblSabiduria.TabIndex = 2;
+            lblSabiduria.Text = "Sabiduria:";
             // 
             // lblFortaleza
             // 
             lblFortaleza.AutoSize = true;
             lblFortaleza.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFortaleza.Location = new Point(17, 58);
+            lblFortaleza.Location = new Point(6, 32);
             lblFortaleza.Name = "lblFortaleza";
             lblFortaleza.Size = new Size(64, 17);
             lblFortaleza.TabIndex = 1;
@@ -120,7 +142,7 @@
             // 
             lblArmadura.AutoSize = true;
             lblArmadura.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblArmadura.Location = new Point(17, 34);
+            lblArmadura.Location = new Point(6, 15);
             lblArmadura.Name = "lblArmadura";
             lblArmadura.Size = new Size(69, 17);
             lblArmadura.TabIndex = 0;
@@ -158,8 +180,9 @@
             Text = "Monstruario";
             Load += frmMonstruario_Load;
             pnlMonstruario.ResumeLayout(false);
-            mrcCaracteristicas.ResumeLayout(false);
-            mrcCaracteristicas.PerformLayout();
+            mrcCaracteristicas8.ResumeLayout(false);
+            mrcCaracteristicas7.ResumeLayout(false);
+            mrcCaracteristicas7.PerformLayout();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
             ResumeLayout(false);
@@ -170,14 +193,16 @@
 
         private TreeView trvMonstruario;
         private Panel pnlMonstruario;
-        private GroupBox mrcCaracteristicas;
+        private GroupBox mrcCaracteristicas7;
         private Label lblDestreza;
         private Label lblInteligencia;
-        private Label lblVelocidad;
+        private Label lblSabiduria;
         private Label lblFortaleza;
         private Label lblArmadura;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel tstpConexionBD;
         private ToolStripStatusLabel tspConexionBD;
+        private GroupBox mrcCaracteristicas8;
+        private ListBox lstAPI;
     }
 }
